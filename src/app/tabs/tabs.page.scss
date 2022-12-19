@@ -1,0 +1,29 @@
+
+@media (max-width: 280px) {
+}
+@media (max-width: 320px) {
+}
+@media (max-width: 480px) {
+}
+@media (max-width: 767px) {
+    .app-menu-tabs {
+        display: none;
+    }
+}
+@media (min-width: 768px) and (max-width: 979px) {
+    .app-menu-tabs {
+        display: none;
+    }
+}
+
+@media (min-width: 980px) and (max-width: 1025px) {
+    .app-menu-tabs {
+        display: none;
+    }
+}
+
+@media (min-width: 1026px) {
+    .app-menu-tabs {
+        display: none;
+    }
+}

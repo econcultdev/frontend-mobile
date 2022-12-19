@@ -1,0 +1,88 @@
+<!--app-header [queryStr]="query"></app-header-->
+<app-header></app-header>
+
+<ion-content *ngIf="loaded">
+
+  <ion-title class="header-bar-texto ion-text-center ion-padding-top ion-padding-bottom" style="height: 15%;">
+    <div class="titulo-principal">
+      <h1>
+        {{ 'RESULTADO_BUSQUEDA_HTML.EVENTS' | translate }}
+      </h1>
+    </div>
+  </ion-title>
+
+  <ion-title class="ion-text-center" style="height: 100%;"
+    *ngIf="eventos && eventos.length <= 0">
+    <div class="titulo-principal">
+      <h4>
+        {{ 'RESULTADO_BUSQUEDA_HTML.EVENTS_NOT_FOUND' | translate }}
+      </h4>
+    </div>
+  </ion-title>
+
+  <ion-list class="event-list">
+    <ion-card class="evento-card-sml" *ngFor="let evento of eventos">
+
+      <div *ngIf="evento.imgUrl">
+        <img [attr.src]="evento.imgUrl | secure | async" alt="">
+      </div>
+      <ion-card-header>
+        <ion-card-subtitle>
+          <div class="ion-text evento-card-lrg__detalles">
+            <div class="evento-card-lrg__categoria-ubicacion">
+              <ion-text color="primary" *ngIf="evento.TipoEvento">
+                {{changeAttributesByLanguage(evento.TipoEvento.nombre, evento.TipoEvento.nombre_multi)}}
+              </ion-text>
+              <ion-text color="dark" *ngIf="evento.direccion"> /
+                {{changeAttributesByLanguage(evento.direccion, evento.direccion_multi)}}
+              </ion-text>
+            </div>
+          </div>
+        </ion-card-subtitle>
+        <ion-card-title>
+          <ion-text color="primary">
+            <h2>
+              {{evento.nombre}}
+            </h2>
+          </ion-text>
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content class="card-content-md-featured-events flexible">
+        <ion-item lines="none" *ngIf="evento.participantes">
+          {{changeAttributesByLanguage(evento.participantes, evento.participantes_multi)}}
+        </ion-item>
+        <ion-item class="ion-padding-bottom" lines="none" *ngIf="evento.resumen">
+          <p>
+            {{changeAttributesByLanguage(evento.resumen, evento.resumen_multi)}}
+          </p>
+        </ion-item>
+
+      </ion-card-content>
+      <ion-footer>
+        <ion-segment class="btn-segment">
+          <ion-segment-button class="btn-segment__bono" layout="icon-start" type="button"
+            (click)="openUrl(evento.link_externo)" *ngIf="evento.link_externo">
+            <div class="btn-segment__icono">
+              <img src="assets/ico-event.png" alt="">
+            </div>
+            {{ 'EVENTOS_DESTACADOS_HTML.KNOW_MORE' | translate }}
+          </ion-segment-button>
+          <ion-segment-button class="btn-segment__evaluar" layout="icon-end" type="button" color="primary"
+            (click)="evaluateEvent(evento.Encuestas[0].id)" *ngIf="evento.Encuestas && evento.Encuestas.length > 0">
+            <ion-icon name="star"></ion-icon>
+            <div class="btn-segment__text">
+              {{ 'EVENTOS_DESTACADOS_HTML.EVALUATE' | translate }}
+            </div>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-footer>
+    </ion-card>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles"
+      loadingText="{{ 'RESULTADO_BUSQUEDA_HTML.LOAD_MORE_EVENTS' | translate }}">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

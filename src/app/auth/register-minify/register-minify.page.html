@@ -1,0 +1,99 @@
+
+
+
+
+<ion-content class="width-app" padding *ngIf="loaded">
+
+  <ion-row class="ion-justify-content-left">
+    <ion-row class="ion-justify-content-left">
+      <app-button-back-arrow></app-button-back-arrow>
+    </ion-row>
+  </ion-row>
+  <ion-row class="ion-justify-content-center">
+    <ion-row class="ion-justify-content-center">
+      <h4 class="title-page">{{ 'REGISTER_HTML.TITLE_MESSAGE' | translate }}</h4>
+    </ion-row>
+  </ion-row>
+  
+  <form [formGroup]="registerForm" (ngSubmit)="onFormSubmit(registerForm)">
+
+
+  
+
+    <ion-row class="ion-justify-content-center mb-4">
+      <ion-row class="ion-justify-content-center">
+        <div class="register-img"></div>
+      </ion-row>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center">
+      <div class="form-group mb-4">
+        <div class="input-group">
+            <span class="input-group-text" id="basic-addon1" >
+              <span class="fas ">
+                <ion-icon name="mail" slot="end">
+              </ion-icon>
+              </span>
+              <ion-input type="text" formControlName="email"></ion-input>
+            </span>
+        </div>  
+      </div>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center">
+      <div class="form-group mb-4">
+        <div class="input-group">
+            <span class="input-group-text" id="basic-addon1" >
+              <span class="fas ">
+                <ion-icon name="lock-open-outline" slot="end">
+              </ion-icon>
+              </span>
+              <ion-input #passwordEyeRegister [type]="passwordTypeInput" formControlName="password" [(ngModel)]="password" 
+                title="{{ 'REGISTER_HTML.PASSWORD_REQUIRED_ERROR' | translate }}">
+              </ion-input>
+              <span>
+                <button lines="none" item-end class="icon-eye" color="transparent" (click)="changeVisibilityPassword($event)">
+                  <ion-icon [name]="(passwordTypeInput !== 'text') ? 'eye-off' : 'eye'" slot="end" ></ion-icon>
+                </button>
+              </span>
+            </span>
+        </div>  
+      </div>
+    </ion-row>
+    <br>
+    <ion-row class="ion-justify-content-center mt-4">
+      <ion-item lines="none">
+        <ion-button class="buttonregister" expand="full" size="default" type="submit" [disabled]="!registerForm.valid">
+          {{ 'REGISTER_HTML.TO_REGISTER' | translate }}
+        </ion-button>
+      </ion-item>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center">
+      <ion-row class="ion-justify-content-center">
+        <h4 >{{ 'REGISTER_HTML.OR' | translate }}</h4>
+      </ion-row>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center">
+      <ion-row class="ion-justify-content-center">
+        <button  class="icongoogle" (click)="showAlertPrivacyData('google')"></button>
+        <ng-container *ngIf="showGoogleLoginButton">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </ng-container>
+        <button  class="iconfacebook quitar-por-ahora" (click)="showAlertPrivacyData('google')" > </button>
+        <ng-container *ngIf="showFacebookLoginButton" >
+          
+        </ng-container>
+      </ion-row>
+    </ion-row>
+  
+  <ion-row class="ion-justify-content-center" style="padding-top: 50px; padding-bottom:25px">
+    <ion-row class="ion-justify-content-center">
+      <div  >{{ 'REGISTER_HTML.MESSAGE_HAVE_ACCOUNT' | translate }}</div>
+      <button  (click)="login()" class="button-action" > &nbsp; {{ 'REGISTER_HTML.MESSAGE_LOG_IN' | translate }} </button>
+    </ion-row>
+  </ion-row>
+  </form>
+
+</ion-content>

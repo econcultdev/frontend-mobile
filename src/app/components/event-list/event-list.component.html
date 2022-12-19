@@ -1,0 +1,53 @@
+<ion-list class="background-primary" *ngFor="let evento of eventosSearch">
+
+  <ion-card (click)="navigate(evento.id)" class="experience-card">
+    <div class="col-8" style="padding: 0px; margin: 0px;">
+      <ion-card-header>
+        <ion-card-title>{{changeAttributesByLanguage(evento.nombre, evento.nombre_multi)}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div *ngIf="evento.permanente==false">
+          <p
+            *ngIf="(evento.fecha_inicio | date : 'MMM dd yyyy')  == (evento.fecha_fin | date : 'MMM dd yyyy'); else notShowD">
+            <ion-icon name="calendar"></ion-icon>
+            {{evento.fecha_inicio | date : 'MMM dd yyyy'}}
+          </p>
+          <ng-template #notShowD>
+            <p>
+              <ion-icon name="calendar"></ion-icon>
+              {{evento.fecha_inicio | date : 'MMM dd yyyy'}} - {{evento.fecha_fin | date : 'MMM dd yyyy'}}
+            </p>
+          </ng-template>
+        </div>
+        <div *ngIf="evento.hora; else notShowH">
+          <p>
+            <ion-icon name="time"></ion-icon>
+            {{evento.hora}}
+          </p>
+        </div>
+        <ng-template #notShowH style="padding-top:0%; padding-bottom: 0%; margin-top: -10px;margin-bottom: 0%;">
+          <p
+            *ngIf="(evento.fecha_inicio | date : 'MMM dd yyyy')  == (evento.fecha_fin | date : 'MMM dd yyyy') && (evento.fecha_inicio | date : 'h:mm')  == (evento.fecha_fin | date : 'h:mm'); else notShowH">
+            <ion-icon name="time"></ion-icon>
+            {{evento.fecha_inicio | date : 'h:mm'}}
+          </p>
+          <ng-template #notShowH>
+            <p>
+              <ion-icon name="time"></ion-icon>
+              {{evento.fecha_inicio | date : 'h:mm'}} - {{evento.fecha_fin | date : 'h:mm'}}
+            </p>
+          </ng-template>
+        </ng-template>
+        <p *ngIf="evento.direccion">
+          <ion-icon name="location"></ion-icon>
+          {{changeAttributesByLanguage(evento.direccion, evento.direccion_multi)}}
+        </p>
+        <h1 class="color-primary" *ngIf="evento.gratuito">{{ 'EVENT_DETAIL_HTML.EVENT_FREE' | translate }}</h1>
+        <h1 class="color-primary" *ngIf="evento.gratuito==false">{{evento.precio}} €</h1>
+      </ion-card-content>
+    </div>
+    <div class="col-4 image" [ngStyle]="{'background-image': 'url(' + evento.imagen + ')'}"></div>
+
+
+  </ion-card>
+</ion-list>

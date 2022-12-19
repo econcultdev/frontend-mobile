@@ -1,0 +1,44 @@
+<app-header></app-header>
+
+<ion-content class="ion-content-hide-scrollbars">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <div class="titulo-principal">
+          <h1>{{ 'BIENVENIDA_HTML.WELCOME' | translate }}, <ion-text color="primary">{{name}}</ion-text>
+          </h1>
+          <h3>{{ 'BIENVENIDA_HTML.KNOW_CULTOTIPO' | translate }}</h3>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <img class="bienvenida__imagen" src="assets/feedback-naranja.svg" alt="">
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="10" class="ion-padding">
+        <p>{{ 'BIENVENIDA_HTML.QUESTIONS_INFO_COMPLETE' | translate }}</p>
+        <p>{{ 'BIENVENIDA_HTML.QUESTIONS_INFO_RECOMENDATION' | translate }}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="auto">
+        <a href="datos-personales">
+          <ion-button class="btn" size="medium" >
+            {{ 'BIENVENIDA_HTML.ASK_ME' | translate }}
+          </ion-button>
+        </a>
+        
+      </ion-col>
+      <ion-col size="auto">
+        <a href="/">
+          <ion-button class="btn" size="medium" >
+            {{ 'BIENVENIDA_HTML.OTHERWISE' | translate }}
+          </ion-button>
+        </a>
+        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

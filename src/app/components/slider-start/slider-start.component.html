@@ -1,0 +1,43 @@
+<ion-toolbar>
+  <ion-buttons slot="end">
+    <app-button-multilanguage></app-button-multilanguage>
+  </ion-buttons>
+</ion-toolbar>
+<ion-slides pager="true" [options]="slideOpts" #slides>
+  <ion-slide>
+    <img src="assets/img/slider_start/slide_1.svg" />
+    <h1>{{ 'SLIDER_START_HTML.SLIDE_1' | translate }}</h1>
+    <ion-button (click)="swipeNext()" class="btn2" style="color: #fff;">
+      {{ 'SLIDER_START_HTML.NEXT' | translate }}
+      <ion-icon slot="end" name="arrow-forward"></ion-icon>
+    </ion-button>
+  </ion-slide>
+
+  <ion-slide>
+    <img src="assets/img/slider_start/slide_2.svg" />
+    <h1>{{ 'SLIDER_START_HTML.SLIDE_2' | translate }}</h1>
+    <ion-button (click)="swipeNext()" class="btn2" style="color: #fff;">
+      {{ 'SLIDER_START_HTML.NEXT' | translate }}
+      <ion-icon slot="end" name="arrow-forward"></ion-icon>
+    </ion-button>
+  </ion-slide>
+
+  <ion-slide>
+    <img src="assets/img/slider_start/slide_3.svg" />
+    <h1>{{ 'SLIDER_START_HTML.SLIDE_3' | translate }}</h1>
+    <ion-button (click)="swipeNext()" class="btn2" style="color: #fff;">
+      {{ 'SLIDER_START_HTML.NEXT' | translate }}
+      <ion-icon slot="end" name="arrow-forward"></ion-icon>
+    </ion-button>
+  </ion-slide>
+
+  <ion-slide>
+    <img src="assets/img/slider_start/start.svg" />
+    <h1>{{ 'SLIDER_START_HTML.READY' | translate }}</h1>
+    <ion-button (click)="closeSlides()" class="btn2" style="color: #fff;">
+      {{ 'SLIDER_START_HTML.START' | translate }}
+      <ion-icon slot="end" name="arrow-forward"></ion-icon>
+    </ion-button>
+  </ion-slide>
+
+</ion-slides>

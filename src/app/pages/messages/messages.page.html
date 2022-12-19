@@ -1,0 +1,24 @@
+<app-header></app-header>
+
+<ion-content class="width-app">
+  <ion-searchbar *ngIf="verifylogin" color="primary" style="color: white"> </ion-searchbar>
+  <app-box-signin-register [verifylogin]="verifylogin"></app-box-signin-register>
+  
+  <!--ion-list id="list" *ngFor="let user of modalData" (click)="openChat(user)">
+    <ion-item *ngIf="user.id != session">
+      <ion-avatar slot="start">
+        <img src="{{ user.imagen }}">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ user.name }}</h2>
+        <p>{{ user?.lastMSG?.msg }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list-->
+  <!--ion-list id="list"></ion-list-->
+
+  <ion-infinite-scroll threshold="100px" id="infinite-scroll">
+    <ion-infinite-scroll-content loading-spinner="bubbles" loading-text="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

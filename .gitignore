@@ -1,18 +1,108 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
 
-# Other files and folders
-.settings/
+# Created by https://www.toptal.com/developers/gitignore/api/ionic3,angular,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=ionic3,angular,visualstudiocode
 
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
+### Angular ###
+## Angular ##
+# compiled output
+dist/
+tmp/
+app/**/*.js
+app/**/*.js.map
+platformsOLD/
+# dependencies
+node_modules/
+bower_components/
 
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+# IDEs and editors
+.idea/
+
+# misc
+.sass-cache/
+connect.lock/
+coverage/
+libpeerconnection.log/
+npm-debug.log
+testem.log
+typings/
+
+# e2e
+e2e/*.js
+e2e/*.map
+
+# System Files
+.DS_Store/
+
+### Ionic3 ###
+# Log an tmp data
+*~
+*.sw[mnpcod]
+*.log
+*.tmp
+*.tmp.*
+log.txt
+
+# NPM (Node Package Manager) files
+npm-debug.log*
+temp/
+
+# Preprocessors cache files
+.sourcemaps/
+.tmp/
+hooks/
+
+# Ionic 3 plugins files
+platforms/
+plugins/
+plugins/android.json
+plugins/ios.json
+www/
+
+# Trash data
+$RECYCLE.BIN/
+.DS_Store
+Thumbs.db
+UserInterfaceState.xcuserstate
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+*.code-workspace
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
+*~
+*.sw[mnpcod]
+.tmp
+*.tmp
+*.tmp.*
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+UserInterfaceState.xcuserstate
+$RECYCLE.BIN/
+
+*.log
+log.txt
+npm-debug.log*
+
+/.idea
+/.ionic
+/.sass-cache
+/.sourcemaps
+/.versions
+/.vscode
+/coverage
+/dist
+/node_modules
+/platforms
+/plugins
+/www
+/.history
+
+# End of https://www.toptal.com/developers/gitignore/api/ionic3,angular,visualstudiocode

@@ -1,0 +1,108 @@
+<app-header></app-header>
+
+<ion-content>
+  <div class="ficha-usuario__header">
+    <div class="ficha-usuario__header-top">
+      <div class="ficha-usuario__username">
+        <div class="ficha-usuario__imagen">
+          <img src="assets/ico-perfil.png" />
+        </div>
+        <div class="ficha-usuario__nombre-usuario">
+          <h2>
+            {{name}}
+          </h2>
+        </div>
+      </div>
+      <div class="ficha-usuario__exit">
+        <ion-button type="button" color="medium" expand="full" size="small" fill="clear" (click)="logout()"
+          class="btn-text">
+          <ion-icon name="exit" slot="end"></ion-icon>
+          {{ 'FICHA_USUARIO_HTML.EXIT_ACCOUNT' | translate }}
+        </ion-button>
+      </div>
+    </div>
+    <div class="ficha-usuario__header-bottom" *ngIf="loaded && cultoTipo">
+      <ng-container *ngIf="sexo !== 'M' || (sexo === 'M' && !cultoTipo.nombreH)">
+        <h1>{{titleWoman}}</h1>
+      </ng-container>
+      <ng-container *ngIf="sexo === 'M' && cultoTipo.nombreH">
+        <h5>{{titleMan}}</h5>
+      </ng-container>
+    </div>
+  </div>
+
+  <ion-grid *ngIf="loaded">
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="10" class="ion-padding-left ion-padding-right ion-text-justify" *ngIf="cultoTipo">
+        <img class="cultotipo__imagen" [attr.src]="cultoTipo.imgUrl | secure | async" alt="" *ngIf="cultoTipo.imgUrl">
+        <p [innerHTML]="description"></p>
+      </ion-col>
+      <ion-col size="10" class="ion-padding-left ion-padding-right ion-text-justify" *ngIf="!cultoTipo">
+        <h3>{{ 'FICHA_USUARIO_HTML.CULTOTIPO_SURVEY' | translate }}</h3>
+      </ion-col>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" class="ion-padding-horizontal ion-padding-bottom">
+          <div class="ficha-usuario__stats">
+            <div class="ficha-usuario__stat" *ngIf="numEncuestas.noFinalizadas">
+              <div class="ficha-usuario__stat-text">
+                <span class="ficha-usuario__stat-numero">
+                  {{numEncuestas.noFinalizadas}}
+                </span>
+                <span class="ficha-usuario__stat-text-inner">
+                  {{ 'FICHA_USUARIO_HTML.SURVEY_TO_BE_COMPLETED' | translate }}
+                </span>
+              </div>
+              <div class="ficha-usuario__stat-button">
+                <ion-button class="btn-clear" fill="clear" expand="full" color="danger" (click)="listEncuestas()">
+                  {{ 'FICHA_USUARIO_HTML.FOR_COMPLETE_SURVEY' | translate }}
+                </ion-button>
+              </div>
+            </div>
+            <div class="ficha-usuario__stat" *ngIf="numEncuestas.finalizadas">
+              <div class="ficha-usuario__stat-text">
+                <span class="ficha-usuario__stat-numero">
+                  {{numEncuestas.finalizadas}}
+                </span>
+                <span class="ficha-usuario__stat-text-inner">
+                  {{ 'FICHA_USUARIO_HTML.COMPLETED_SURVEYS' | translate }}
+                </span>
+              </div>
+              <div class="ficha-usuario__stat-button">
+                <ion-button class="btn-clear" fill="clear" expand="full" color="primary" (click)="listEncuestas()">
+                  {{ 'FICHA_USUARIO_HTML.SHOW_DETAILS' | translate }}
+                </ion-button>
+              </div>
+            </div>
+            <div class="ficha-usuario__stat" *ngIf="bonos.length">
+              <div class="ficha-usuario__stat-text">
+                <span class="ficha-usuario__stat-numero">
+                  {{bonos.length}}
+                </span>
+                <span class="ficha-usuario__stat-text-inner">
+                  {{ 'FICHA_USUARIO_HTML.BONUSES_CONSUMED' | translate }}
+                </span>
+              </div>
+              <div class="ficha-usuario__stat-button">
+
+              </div>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+<ion-footer>
+  <ion-segment class="btn-segment ficha-usuario__btn-segment">
+    <ion-segment-button class="btn-segment__ficha" layout="icon-start" type="button" color="dark"
+      (click)="editUserRecord()">
+      {{ 'FICHA_USUARIO_HTML.EDIT_PROFILE' | translate }}
+    </ion-segment-button>
+    <ion-segment-button class="btn-segment__evaluar" layout="icon-end" type="button" color="primary"
+      (click)="modEncuestaPersonal()">
+      {{ 'FICHA_USUARIO_HTML.MODIFY_PERSONAL_SURVEY' | translate }}
+    </ion-segment-button>
+  </ion-segment>
+</ion-footer>

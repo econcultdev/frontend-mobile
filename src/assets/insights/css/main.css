@@ -1,0 +1,901 @@
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --base-font-family: "Roboto",sans-serif;
+    --alternative-font-family: "Poppins",sans-serif;
+    --regular-font-weight: 400;
+    --bold-font-weight: 700;
+    --base-line-height: 1.3;
+    --primary: #3ED6C0;
+    --primary-dark: #2B4742;
+    --primary-darker: #122B26;
+    --button: #6dfce6;
+    --button-hover: #6AD8C6;
+    --button-focus: #79B5AB;
+    --dark: #111;
+    --white: #fff;
+    --grey-dark: #232323;
+    --grey: #cfcfcf;
+    --grey-light: #f1f1f1;
+    --grey-lighter: #F7F7F7;
+    --base-font-size: 1.25em;
+    --small-font-size: 1em;
+    --extra-small-font-size: 0.75em;
+    --h1-size: 1.7em;
+    --h2-size: 1.5em;
+    --h3-size: 1.2em;
+    --gap: 1rem;
+    --margin-base: 1rem;
+    --gap-xs: .5rem;
+    --transition-base: all ease .2s;
+}
+
+
+html {
+  background: var(--grey-dark);
+  color: var(--white);
+  font-size: 1em;
+  line-height: 1.4;
+  font-family: var(--base-font-family);
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .sr-only class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+.container {
+  max-width: 100%;
+  padding: 0 1.5em;
+  margin: 0 auto;
+}
+.flex {
+  display: flex;
+}
+.grid {
+  display: grid;
+  grid-gap: var(--gap);
+  gap: var(--gap);
+}
+.space-between {
+  justify-content: space-between;
+}
+.justify-center {
+  justify-content: center;
+}
+.flex-start {
+  justify-content: flex-start;
+}
+.flex-end {
+  justify-content: flex-end;
+}
+.align-center {
+  align-items: center;
+  align-content: center;
+}
+.stretch {
+  align-items: stretch;
+  align-content: stretch;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 1.5rem;
+}
+
+.col-1 { grid-column: span 1; }
+.col-2 { grid-column: span 2; }
+.col-3 { grid-column: span 3; }
+.col-4 { grid-column: span 4; }
+.col-5 { grid-column: span 5; }
+.col-6 { grid-column: span 6; }
+.col-7 { grid-column: span 7; }
+.col-8 { grid-column: span 8; }
+.col-9 { grid-column: span 9; }
+.col-10 { grid-column: span 10; }
+.col-11 { grid-column: span 11; }
+.col-12 { grid-column: span 12; }
+
+@media (max-width: 1029.98px) {
+  .mobile-column {
+    flex-direction: column;
+  }
+  
+  .only-desktop {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1029.99px) {
+  .only-mobile {
+    display: none !important;
+  }
+  .desktop-space-between {
+    justify-content: space-between;
+  }
+  .grid-desktop {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1.5rem;
+  }
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--alternative-font-family);
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--h1-size);
+}
+
+h2 {
+  font-size: var(--h2-size);
+}
+
+h3 {
+  font-size: var(--h3-size);
+}
+
+button, input, select, textarea {
+    font-family: unset;
+    margin: 0;
+    vertical-align: middle;
+    border: none;
+}
+
+button, input {
+    line-height: normal;
+    border-radius: 0;
+}
+
+button {
+    -webkit-appearance: none;
+    background: unset;
+    cursor: pointer;
+}
+
+a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.btn {
+  display: inline-flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8em 1em;
+  text-align: center;
+  background: var(--button);
+  color: var(--dark);
+  border: 1px solid var(--primary-dark);
+  border-radius: 0.2em;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+.btn:hover, .btn:focus,
+.submenu-container.active .btn {
+  background: var(--button-hover);
+  border-color: var(--dark);
+}
+
+.btn.off::before,
+.btn.on::before {
+  content: 'OFF';
+  display: inline-block;
+  border-radius: 0.5em;
+  padding: 0.1em;
+  font-size: 0.7em;
+  height: 1.5em;
+  width: 3em;
+  line-height: 1.4em;
+  background: rgba(0,0,0,0.2);
+  margin-right: 0.8em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn.on::before {
+  content: 'ON';
+  background: var(--white);
+}
+
+.btn .label {
+  margin-left: 0.5em;
+}
+
+.dropdown::after {
+    display: inline-block;
+    content:"";
+    border-style: solid;
+    border-width: 0.15em 0.15em 0 0;
+    width: 0.35em; height: 0.35em;
+    transform: rotate(135deg);
+    margin-bottom: 0.2em;
+    margin-left: 1em;
+}
+
+.submenu-container.active .dropdown::after{
+  transform: rotate(315deg);
+  margin-bottom: 0em;
+  margin-top: 0.2em;
+}
+
+.submenu-container {
+  position: static;
+}
+
+.submenu-container.active {
+  position: relative;
+  z-index: 50;
+}
+
+.submenu-container .submenu {
+  position: absolute;
+  top: 100%;
+  background: var(--grey);
+  color: var(--dark);
+  margin-top: -1px;
+  border-radius: 0.2em;
+  height: 0;
+  overflow: hidden;
+  max-width: 90vw;
+  min-width: 125%;
+}
+
+.submenu-container.right .submenu {
+  right: 0;
+}
+
+.submenu-container.left .submenu {
+  left: 0;
+}
+
+.submenu-container.active .submenu-toggle {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.submenu-container.right.active .submenu {
+  border-top-right-radius: 0;
+}
+
+.submenu-container.left.active .submenu {
+  border-top-left-radius: 0;
+}
+
+.submenu-container.active .submenu {
+  height: auto;
+  z-index: 90;
+  border: 1px solid var(--dark);
+}
+
+.submenu fieldset {
+  padding: 1rem 1rem;
+  background: var(--grey-lighter);
+  border-bottom: 1px dotted var(--dark);
+}
+
+.submenu .btn {
+  margin: 1rem 1rem;
+}
+
+.submenu .flex fieldset {
+  padding: 1rem 1.5rem;
+  border-bottom: 0;
+  border-right: 1px dotted var(--dark);
+}
+
+.submenu.flex fieldset:last-child {
+  border: 0;
+}
+
+.submenu fieldset label {
+  font-weight: bold;
+}
+
+.submenu fieldset select {
+  width: 100%;
+}
+
+label {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+input[type="checkbox"], input[type="radio"]{
+  appearance: none;
+  display: inline-block;
+  border: 0.19em solid transparent;
+  outline: 1px solid var(--dark);
+  padding: 1px;
+  background: transparent;
+  width: 1em; height: 1em;
+  margin-right: 0.3em;
+  border-radius: 0.1em;
+}
+
+input[type="radio"] {
+  border-radius: 50%;
+}
+
+input[type="checkbox"]:checked, input[type="radio"]:checked {
+  border: 0.19em solid var(--grey-light);
+  background: var(--primary-darker);
+}
+
+* {
+  scrollbar-color: var(--primary-darker);
+  scrollbar-width: thin;
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+*::-webkit-scrollbar-thumb  {
+  background-color: var(--primary-darker);
+}
+
+/*
+ *
+ *  HEADER / FOOTER
+ *
+ */
+
+
+.main-header {
+  background: var(--primary);
+  border-bottom: 1px solid var(--dark);
+  color: var(--dark);
+}
+
+.main-footer {
+  background: var(--primary-dark);
+  color: var(--white);
+  border-top: 1px solid var(--grey);
+}
+
+.main-header > .flex {
+  height: 5em;
+}
+
+.main-header .logo {
+  width: 2em;
+  height: 3em;
+  border-radius: 0.5em;
+  background: url(../img/logo_dark.svg) left center no-repeat;
+  background-size: auto 3em;
+  margin-right: 1em;
+  flex-shrink: 0; flex-grow: 0;
+}
+
+.change-experience-menu {
+  cursor: pointer;
+  flex-shrink: 5;
+  overflow: hidden;
+  margin-right: 1em;
+}
+
+.change-experience-menu .dropdown {
+  color: var(--dark);
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.main-header .experience-name,
+.main-header .venue-name {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  flex-shrink: 5;
+  flex-grow: 0;
+}
+
+.main-header .experience-name {
+  padding-left: 0.7em;
+  margin-left: 0.7em;
+  border-left: 1px solid var(--dark);
+  font-weight: normal;
+}
+
+.icon::before {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-size: 1em 1em;
+  background-repeat: no-repeat;
+}
+
+.icon-calendar::before {
+  background-image: url(../img/calendar.svg);
+}
+
+.datepicker .date-range {
+  padding-left: 0.5em;
+}
+
+.main-header .datepicker {
+  margin-left: auto;
+  flex-shrink: 0; flex-grow: 0;
+}
+
+@media (max-width: 1029.98px) {
+
+  .main-header {
+    font-size: 0.7em;
+    position: sticky;
+  }
+  
+  .main-header .submenu {
+    font-size: 1.3em;
+  }
+  
+  .main-footer > .flex {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+}
+
+@media (max-width: 440px) {
+  .main-header .datepicker .date-range {
+    display: none;
+  }
+  .btn .label {
+    display: none;
+  }
+}
+
+@media (min-width: 1029.99px) {
+  .main-footer > .flex {
+    height: 4rem;
+  }
+}
+
+.main-footer .flex {
+  gap: 1rem;
+  font-size: 0.9em;
+}
+
+.main-footer a {
+  color: var(--grey);
+}
+
+.main-footer .logos img {
+  width: auto; height: auto;
+  max-height: 3em;
+  max-width: 100%;
+}
+
+/*
+ *
+ *  DASHBOARD
+ *
+ */
+
+.main-section {
+  min-height: 24rem;
+  overflow: hidden;
+  background: var(--dark);
+}
+
+.chart-space {
+  min-height: 300px;
+}
+
+
+@media (min-width: 1030px) and (min-height: 596px) {
+
+  body, html {
+    height: 100%;
+  }
+
+  #app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .main-section {
+    height: 100%;
+    overflow-y: auto;
+  }
+  
+  .grid-desktop > div {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .grid-desktop,
+  .grid-desktop > div,
+  .block-global-score {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .block-score-price {
+    height: 40%;
+  }
+  .block-reviews{
+    height: 60%;
+  }
+  
+  .chart-space, .text-space {
+    height: 100%;
+    min-height: 0;
+  }
+  
+}
+
+@media (min-width: 1030px) and (max-height: 900px) {
+  html { font-size: 12px;}
+  .block-score-price {
+    height: 50%;
+  }
+  .block-reviews{
+    height: 50%;
+  }
+}
+
+.dashboard-block {
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  background: var(--grey-dark);
+  overflow: hidden;
+}
+
+.dashboard-block > header {
+  background: var(--primary);
+  color: var(--dark);
+  border-bottom: 1px solid var(--grey-dark);
+}
+
+.dashboard-block > header .btn {
+  font-size: 0.8em;
+  border-color: var(--dark);
+  padding: 0.4em 0.8em;
+}
+
+.dashboard-block > header h3 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.icon-filter::before {
+  background-image: url(../img/demographics.svg);
+  width: 1.5em;
+  height: 1.5em;
+  background-size: 1.5em 1.5em;
+}
+
+.filters .submenu {
+  min-width: 250px;
+}
+
+.dashboard-block .block-content {
+  padding: 0.7rem 1rem;
+}
+
+.dashboard-block .chart-space,
+.dashboard-block .text-space {
+  background: var(--grey-light);
+}
+
+.dashboard-block .text-space {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.big-number {
+  font-size: var(--h2-size);
+  text-align: right;
+  font-weight: bold;
+  margin-left: 0.8rem;
+}
+
+.label {
+  text-transform: uppercase;
+}
+
+.dashboard-block.block-reviews .block-content.text-space {
+  padding: 0;
+}
+
+.review {
+  color: var(--dark);
+  padding: 1rem 1rem;
+  border-top: 1px solid var(--grey);
+  font-size: 0.9em;
+}
+
+.text-space .review:first-child {
+  border-top: 0;
+}
+
+.review .data {
+  font-weight: bold;
+}
+
+.review p {
+  margin-top: 0;
+}
+
+
+.chart-options {
+  padding: 1rem;
+  font-size: 0.9em;
+  background: var(--grey-light);
+  color: var(--grey-dark);
+  border-bottom: 1px solid var(--grey-dark);
+  flex-wrap: nowrap;
+  overflow: hidden;
+  overflow-x: auto;
+  gap: 1rem;
+}
+
+.chart-options > div, .chart-options label {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.chart-options .label:not(:first-child) {
+  border-left: 1px solid;
+  padding-left: 1rem;
+}
+
+@media (min-width: 1030px) {
+  
+}
+
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+   
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+

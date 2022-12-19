@@ -1,0 +1,44 @@
+<app-header></app-header>
+
+<ion-content no-scroll id="qr">
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="auto">
+        <div class="titulo-principal ion-text-center">
+          <h1>
+            {{ 'QR_HTML.SCAN_QR' | translate }}
+          </h1>
+          <p>{{ 'QR_HTML.SCAN_QR_SURVEY' | translate }}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center" *ngIf="loaded && devices.length > 0">
+      <ion-col size="auto">
+        <ion-label>{{ 'QR_HTML.DEVICES' | translate }}</ion-label>
+        <ion-select placeholder="{{ 'QR_HTML.DEVICES_SELECT' | translate }}" [compareWith]="compareById"
+          (ionChange)="changeDeviceId($event)" [disabled]="isOn" ([ngModel])="device" multiple="false">
+          <ion-select-option *ngFor="let dev of devices" [value]="dev">{{dev.text}}</ion-select-option>
+        </ion-select>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center" *ngIf="loaded">
+      <ion-col size="auto">
+        <ion-button expand='block' margin (click)="goToQrScan()" [disabled]="!WebQR.decoder || !device || isOn">
+          {{ 'QR_HTML.SCAN' | translate }}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center" *ngIf="QRSCANNED_DATA">
+      <p> {{ 'QR_HTML.SCAN_CODE' | translate }}
+        <b *ngIf="!isDataLink">{{ QRSCANNED_DATA }}</b>
+        <ion-button *ngIf="isDataLink" fill="clear" (click)="openUrl()"></ion-button>
+      </p>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <div class="QRScanner-container" id="containerElem">
+        <canvas id="canvasElem" width="240" height="200"></canvas>
+        <video id="videoElem" style="display: none;" width="200" height="200"></video>
+      </div>
+    </ion-row>
+  </ion-grid>
+</ion-content>

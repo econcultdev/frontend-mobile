@@ -1,0 +1,13 @@
+<div class="color-primary group-field background-white" >
+  <div class="bc-primary group-icon">
+    <ion-icon name="location" class="icon-field"></ion-icon>
+  </div>
+  <ion-select (ionChange)="changeSelected($event)" class="select-text"
+    placeholder="{{ 'HOME_HTML.SELECT_CITIES' | translate }}" value="{{cityId}}"
+    >
+    <ion-select-option selected="True" *ngFor="let itemcity of listCities" value="{{itemcity.id}}">
+      {{changeAttributesByLanguage(itemcity.nombre, itemcity.nombre_multi)}}
+    </ion-select-option>
+  </ion-select>
+
+</div>

@@ -1,0 +1,10 @@
+<ion-content>
+  <div class="parent">
+    <ion-list *ngFor="let language of languages" lines="none">
+      <ion-button expand="full" item-start color="transparent" (click)="changeLanguage(language.iso)">
+        <ion-icon [src]="language.icon" class="ion-align-self-center"></ion-icon>
+        <span class="ion-text-left">{{language.name}}</span>
+      </ion-button>
+    </ion-list>
+  </div>
+</ion-content>

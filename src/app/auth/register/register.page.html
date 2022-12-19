@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'REGISTER_HTML.TITLE' | translate }}</ion-title>
+    <ion-buttons slot="end">
+      <app-button-multilanguage></app-button-multilanguage>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding *ngIf="loaded">
+
+
+  
+
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <ion-list>
+      <ion-item class="ion-margin-bottom">
+        <ion-label position="stacked">{{ 'REGISTER_HTML.NAME' | translate }}</ion-label>
+        <ion-input type="text" formControlName="nombre"></ion-input>
+      </ion-item>
+      <ion-item class="ion-margin-bottom">
+        <ion-label position="stacked">{{ 'REGISTER_HTML.SURNAME' | translate }}</ion-label>
+        <ion-input type="text" formControlName="apellidos"></ion-input>
+      </ion-item>
+      <ion-item class="ion-margin-bottom">
+        <ion-label position="stacked">{{ 'REGISTER_HTML.EMAIL' | translate }}</ion-label>
+        <ion-input type="text" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">{{ 'REGISTER_HTML.PASSWORD' | translate }}</ion-label>
+        <ion-input type="password" formControlName="password" 
+          title="{{ 'REGISTER_HTML.PASSWORD_REQUIRED_ERROR' | translate }}">
+        </ion-input>
+      </ion-item>
+      <control-messages [control]="registerForm.get('password')"></control-messages>
+      <ion-item lines="none" class="ion-margin-bottom">
+        <ng2-password-strength-bar [passwordToCheck]="password" [barLabel]="barLabel" [barColors]="myColors">
+        </ng2-password-strength-bar>
+      </ion-item>
+      <ion-item class="ion-margin-bottom">
+        <ion-label position="stacked">{{ 'REGISTER_HTML.PASSWORD_CONFIRMATION' | translate }}</ion-label>
+        <ion-input type="password" formControlName="password2"
+          title="{{ 'REGISTER_HTML.PASSWORD_REQUIRED_ERROR' | translate }}">
+        </ion-input>
+      </ion-item>
+      <control-messages [control]="registerForm.get('password2')"></control-messages>
+      <ion-item lines="none" class="ion-margin-bottom">
+        <ion-checkbox formControlName="acepto_privacidad"></ion-checkbox>
+        <ion-note class="registro__consentimiento">
+          {{ 'REGISTER_HTML.LEGAL_PRIVACY_CONDITIONS' | translate }}</ion-note>
+      </ion-item>
+      <ion-item lines="none" class="ion-margin-bottom">
+        <ion-checkbox formControlName="acepto_comercial"></ion-checkbox>
+        <ion-note class="registro__consentimiento">
+          {{ 'REGISTER_HTML.COMMERCIAL_CULTURAL_INTERESTS' | translate }}</ion-note>
+      </ion-item>
+      <ion-item lines="none" class="ion-margin-bottom">
+        <ion-checkbox formControlName="acepto_compartir"></ion-checkbox>
+        <ion-note class="registro__consentimiento">
+          {{ 'REGISTER_HTML.SHARED_DATA' | translate }}
+        </ion-note>
+      </ion-item>
+      <ion-item lines="none" class="ion-margin-bottom" *ngIf="textoLegal && textoLegal.nombre && textoLegal.texto">
+        <ion-button class="btn-social" color="light" (click)="condiciones_legales()">
+          {{ 'REGISTER_HTML.LEGAL_CONDITIONS' | translate }}</ion-button>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-button expand="full" size="default" size="large" type="submit" [disabled]="!registerForm.valid">
+          {{ 'REGISTER_HTML.TO_REGISTER' | translate }}
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </form>
+
+</ion-content>

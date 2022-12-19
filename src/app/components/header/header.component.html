@@ -1,0 +1,55 @@
+<header class="center">
+  <div class="col-12" style="height:60px; max-width:1200px; min-width:280px;">
+    <ion-avatar style="float: left; width: 98px; height:39px">
+      <a href="/">
+        <img alt="" src="assets/img/logo_dark.svg">
+      </a>
+    </ion-avatar>
+    
+    <app-users-circle style="float: right; width: 40px; height:40px"></app-users-circle>
+    <div style="float: right; ">
+      <ion-avatar style="width: 40px; height:40px;  display: flex;align-items: center;">
+        <a href="/app/saved-events" style="margin-top:4px">
+          <ion-icon class="heart-menu-top" name="heart-outline" style="width: 30px; height:30px;"></ion-icon>
+        </a>
+      </ion-avatar>
+    </div>
+    <div style="float: right; ">
+      <ion-menu-button style="width: 40px; height:40px;  display: flex;align-items: center;">
+        <ion-icon class="colorbutton" id="main-content" name="grid-outline" style="width: 25px; height:25px"></ion-icon>
+      </ion-menu-button>
+    </div>
+    <ion-buttons style="float: right; width: 40px; height:40px;">
+      <app-button-multilanguage></app-button-multilanguage>
+    </ion-buttons>
+
+  </div>
+</header>
+
+<ion-menu side="end" content-id="main-content">
+  <ion-header>
+    <ion-toolbar translucent>
+      <ion-title></ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item class="buttonn-option-menu quitar-por-ahora" href="#">
+        <ion-icon name="settings-outline" slot="start"></ion-icon>
+        <ion-label>{{ 'MENU_TOP_LINKS.CONFIGURATION' | translate }}</ion-label>
+      </ion-item>
+      <ion-item class="buttonn-option-menu" href="#">
+        <ion-icon name="timer-outline" slot="start"></ion-icon>
+        <ion-label>{{ 'MENU_TOP_LINKS.YOUR_ACTIVITY' | translate }}</ion-label>
+      </ion-item>
+      <ion-item class="buttonn-option-menu" href="/app/saved-events">
+        <ion-icon name="heart-outline" slot="start"></ion-icon>
+        <ion-label>{{ 'MENU_TOP_LINKS.SAVED_EVENTS' | translate }}</ion-label>
+      </ion-item>
+      <ion-item class="buttonn-option-menu" (click)="logout()">
+        <ion-icon name="exit-outline" slot="start"></ion-icon>
+        <ion-label>{{ 'MENU_TOP_LINKS.LOG_OUT' | translate }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>

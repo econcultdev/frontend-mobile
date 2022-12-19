@@ -1,0 +1,22 @@
+<app-header></app-header>
+
+
+<ion-content >
+
+  <ion-row class="title-page">
+    <h3 >{{ 'SAVED_EVENTS_HTML.PAGE_TITLE' | translate }}</h3>
+  </ion-row>
+    <div class="container-web-center">
+      <div class="width-app">
+        <div *ngIf="!eventos.length" class="menssage_content_not_found">
+          <h5>{{ 'SAVED_EVENTS_HTML.CONTENT_NOT_FOUND' | translate }}</h5>
+        </div>
+        <app-event-list [eventosSearch]="eventos"></app-event-list>
+      </div>
+  </div>  
+  
+</ion-content>
+
+
+
+

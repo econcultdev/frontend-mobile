@@ -1,0 +1,45 @@
+<ion-content class="width-app">
+  <ion-row class="ion-justify-content-center mb-4">
+    <ion-row class="ion-justify-content-center">
+      <div class="top-page-img"></div>
+    </ion-row>
+  </ion-row>
+
+  <h4 class="title-event-search">{{ 'EVENT_SEARCH_HTML.TITLE_MESSAGE' | translate }}</h4>
+
+
+  <app-city-location style="display: flex;
+  align-items: center;
+  justify-content: center; margin-left: 5%;
+    margin-right: 5%;"></app-city-location>
+
+  <div class="wrapper-button">
+    <ion-button color="white" class="color-primary group-button">{{ 'EVENT_SEARCH_HTML.BUTTON_TODAY_MESSAGE' | translate
+      }}</ion-button>
+    <ion-button color="white" class="color-primary group-button">{{ 'EVENT_SEARCH_HTML.BUTTON_THIS_WEEK_MESSAGE' |
+      translate }}</ion-button>
+    <ion-button color="white" class="color-primary group-button">{{ 'EVENT_SEARCH_HTML.BUTTON_NEXT_WEEK_MESSAGE' |
+      translate }}</ion-button>
+  </div>
+
+
+  <div class="color-primary group-field" (click)="picker.open()">
+
+    <div class="bc-primary group-icon-go-home" (click)="goHome()">
+      <ion-icon name="arrow-back-outline" class="icon-field"></ion-icon>
+    </div>
+    <div class="bc-primary group-icon">
+      <ion-icon name="calendar" class="icon-field"></ion-icon>
+    </div>
+    <mat-datepicker #picker></mat-datepicker>
+    <input [(ngModel)]="dateFilter" readonly=»readonly» [min]="minDate" [max]="maxDate" [matDatepicker]="picker"
+      (ngModelChange)="changerDateFilter($event)" class="select-text" matInput>
+    <div class="bc-primary group-icon">
+      <ion-icon name="chevron-down-outline" class="icon-field" style="zoom:1.5;"></ion-icon>
+    </div>
+  </div>
+  <div class="container-btn-search">
+    <button class="button-search">Search</button>
+  </div>
+
+</ion-content>

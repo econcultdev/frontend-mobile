@@ -1,0 +1,417 @@
+{
+    "LANGUAGE": "Español",
+    "ACTIVATION_HTML": {
+        "TITLE": "Activación de nuevo usuario",
+        "NAME_USER": "Usuario con nombre: {{username}} creado. Pulse el botón para activarlo.",
+        "BUTTON_ACTIVE": "Activar",
+        "GO_TO_AUTH": "Ir a autenticarse",
+        "NEW_TOKEN": "Generar Nuevo Token"
+    },
+    "ACTIVATION_TS": {
+        "PARAMETERS_ERROR": "Parámetros incorrectos",
+        "SERVER_ERROR": "Error al comunicarse con el servidor",
+        "USER_NOT_FOUND": "No se ha encontrado el usuario {{username}} en el sistema. Póngase en contacto con el administrador si ha registrado este usuario o cree uno de nuevo.",
+        "TOKEN_NOT_FOUND": "No se ha encontrado un token en el sistema para el usuario {{username}}. Se ha reenviado un email a {{email}} con un nuevo token.",
+        "EMAIL_NOT_SENT": "No se ha podido enviar un email a {{email}}. Intente actualizar la página. Si sucede de nuevo contacte con el administrador.",
+        "TOKEN_NOT_UPDATED": "No se ha podido actualizar el token. Intente actualizar la página. Si sucede de nuevo contacte con el administrador.",
+        "USER_NOT_ACTIVATED": "No se ha podido activar el usuario. Intente actualizar la página. Si sucede de nuevo contacte con el administrador.",
+        "TOKEN_EXPIRED": "El token no es correcto o ha expirado (tiene una validez de {{tokenTime}} s).<br />Si quiere generar uno nuevo, pulse en el enlace para que se le envíe un email.",
+        "NEW_TOKEN": "Nuevo token creado. Revise su correo.",
+        "USER_EMPTY": "Usuario vacío"
+    },
+    "LIST_EXPERIENCE_EVALUATE_HTML":{
+        "CONTENT_NOT_FOUND": "No hay evaluaciones disponibles",
+        "PAGE_TITLE":"Experiencias a evaluar",
+        "SUBTITLE_SCHEDULE":"¿Cuándo has asistido?"
+    },
+    "LOGIN_TS": {
+        "USER_NO_EXIST": "No existe el usuario",
+        "PASSWORD_ERROR": "Contraseña incorrecta",
+        "TOKEN_CHECK_ERROR": "Error al verificar el token",
+        "USER_NOT_ACCEPTED_PRIVACY_CONDITIONS": "El usuario no ha aceptado las condiciones de privacidad",
+        "USER_NOT_ACTIVE": "El usuario no está activado",
+        "USER_NOT_EXIST": "El usuario no existe",
+        "USER_NOT_SUPPLIED": "Por favor suministre el usuario",
+        "SERVER_ERROR": "Error al comunicarse con el servidor",
+        "USERNAME_REQUIRED": "Ha de introducir el nombre de usuario",
+        "USERNAME_REQUIRED_PLEASE": "Ha de introducir el nombre de usuario",
+        "USER_NOT_FOUND": "Usuario {{username}} no encontrado",
+        "EMAIL_SEND": "Se ha enviado un email a {{email}}. Siga sus intrucciones.",
+        "EMAIL_SEND_ERROR": "Error al enviar el correo a {{email}}. Inténtelo de nuevo.",
+        "TOKEN_UPDATE_ERROR": "Error interno al actualizar el token. Inténtelo de nuevo.",
+        "AGREE": "ESTOY DE ACUERDO",
+        "NOT_AGREE": "EN DESACUERDO"
+    },
+    "LOGIN_HTML": {
+        "TITLE_MESSAGE_WELCOME":"¡Bienvenido de nuevo!",
+        "USER_REMEMBER": "Recordar usuario",
+        "ENTER": "Entrar",
+        "PASSWORD_CHANGE": "Cambiar contraseña",
+        "I_AM_A_NEW_USER": "Soy un nuevo usuario",
+        "OR": "O",
+        "MESSAGE_NOT_HAVE_ACCOUNT": "¿No tienes una cuenta?",
+        "MESSAGE_SIGN_UP":"Registrarse"
+    },
+    "MODIFY_PASSWORD_HTML": {
+        "TITLE": "AU Cultura",
+        "PASSWORD_MODIFY": "Modificación de contraseña",
+        "GO_TO_AUTH": "Ir a autenticación",
+        "PASSWORD_REQUIRED_ERROR": "Las contraseña ha de cumplir el criterio de: mínimo 8 caracteres, máximo 20 caracte Ha de tener mayúsculas, minúsculas, números y no ha de tener espacios.",
+        "PASSWORD": "CONTRASEÑA",
+        "PASSWORD_CONFIRMED": "CONFIRMAR CONTRASEÑA",
+        "MODIFY": "Guardar",
+        "GENERATE_NEW_TOKEN": "Generar Nuevo Token"
+    },
+    "MODIFY_PASSWORD_TS": {
+        "PASSWORD_CONSISTENCE": "Consistencia contraseña:",
+        "PARAMETERS_ERROR": "Parámetros incorrectos",
+        "PASSWORD_MISSING": "Falta la contraseña o la confirmación de la contraseña",
+        "PASSWORD_CONSISTENCE_NOT_EQUALS": "La confirmación de la contraseña no es igual que la contraseña",
+        "PASSWORD_REQUIRED_ERROR": "La contraseña ha de cumplir el criterio de: mínimo 8 caracteres, máximo 20 caracte Ha de tener mayúsculas, minúsculas, números y no ha de tener espacios.",
+        "SERVER_ERROR": "Error al comunicarse con el servidor",
+        "PASSWORD_CHANGED": "Contraseña cambiada para el usuario {{username}}.",
+        "USER_NOT_FOUND": "No se ha encontrado el usuario {{username}} en el sistema. Póngase en contacto con el administrador si ha registrado este usuario o cree uno de nuevo.",
+        "TOKEN_GENERATED": "Token generado. Se ha reenviado un email a {{email}} con un nuevo token.",
+        "EMAIL_NOT_SENT": "No se ha podido enviar un email a {{email}}. Intente actualizar la página. Si sucede de nuevo contacte con el administrador.",
+        "TOKEN_NOT_UPDATED": "No se ha podido actualizar el token. Intente actualizar la página. Si sucede de nuevo contacte con el administrador.",
+        "PASSWORD_NOT_UPDATED": "No se ha podido actualizar la contraseña. Intente actualizar la página. Si sucede de nuevo contacte con el administrador.",
+        "TOKEN_EXPIRED": "El token no es correcto o ha expirado (tiene una validez de {{tokenTime}} s).<br />Si quiere generar uno nuevo, pulse en el enlace para que se le envíe un email.",
+        "NEW_TOKEN": "Nuevo token creado. Revise su correo."
+    },
+    "REGISTER_HTML": {
+        "TITLE": "Registro de usuario",
+        "NAME": "NOMBRE",
+        "SURNAME": "APELLIDOS",
+        "EMAIL": "EMAIL",
+        "PASSWORD": "CONTRASEÑA",
+        "PASSWORD_CONFIRMATION": "CONFIRMA CONTRASEÑA",
+        "PASSWORD_CONSISTENCE_NOT_EQUALS": "La confirmación de la contraseña no es igual que la contraseña",
+        "PASSWORD_REQUIRED_ERROR": "La contraseña ha de cumplir el criterio de: mínimo 8 caracteres, máximo 20 caracteres. Ha de tener mayúsculas, minúsculas, números y no ha de tener espacios.",
+        "PASSWORD_REQUIRED_MINIFY": "La contraseña ha de cumplir el criterio de: mínimo 8 caracteres, máximo 20 caracteres y no ha de tener espacios.",
+        "LEGAL_PRIVACY_CONDITIONS": "He leído y acepto las condiciones legales y de privacidad",
+        "COMMERCIAL_CULTURAL_INTERESTS": " Acepto recibir información comercial relacionada con mis intereses culturales",
+        "SHARED_DATA": "Acepto que mis datos sean compartidos con instituciones culturales",
+        "LEGAL_CONDITIONS": "Condiciones legales",
+        "TO_REGISTER": "Registrarse",
+        "TITLE_MESSAGE":"¡Registrarse!",
+        "OR": "O",
+        "MESSAGE_HAVE_ACCOUNT": "¿Tienes una cuenta?",
+        "MESSAGE_LOG_IN":"Iniciar Sesión"
+    },
+    "REGISTER_TS": {
+        "CLOSE": "CERRAR",
+        "PASSWORD_CONSISTENCE": "Consistencia contraseña:",
+        "SERVER_ERROR": "Error al comunicarse con el servidor",
+        "INCORRECT_REGISTRATION": "Registro incorrecto",
+        "PASSWORD_MISSING": "Falta la contraseña o la confirmación de la contraseña",
+        "PASSWORD_CONSISTENCE_NOT_EQUALS": "La confirmación de la contraseña no es igual que la contraseña",
+        "PASSWORD_REQUIRED_ERROR": "La contraseña ha de cumplir el criterio de: mínimo 8 caracteres, máximo 20 caracte Ha de tener mayúsculas, minúsculas, números y no ha de tener espacios."
+    },
+    "CONTROLMESSAGE_TS": {
+        "REQUIRED": "Requerido",
+        "INVALID_EMAIL_ADDRESS": "Email inválido",
+        "PASSWORD_REQUIRED_ERROR": "La contraseña ha de cumplir el criterio de: mínimo 8 caracteres, máximo 20 caracte Ha de tener mayúsculas, minúsculas, números y no ha de tener espacios.",
+        "MIN_LENGTH": "Longitud mínima"
+    },
+    "GOOGLE_LOGIN_HTML": {
+        "LOGIN": "Entrar Google"
+    },
+    "GOOGLE_LOGIN_TS": {
+        "USER_NOT_EXIST": "No existe el usuario",
+        "PASSWORD_WRONG": "Contraseña incorrecta",
+        "TOKEN_ERROR": "Error al verificar el token",
+        "MIN_LENGTH": "Longitud mínima {{length}}",
+        "USER_NOT_ACCEPTED_PRIVACY_CONDITIONS": "El usuario no ha aceptado las condiciones de privacidad",
+        "USER_NOT_ACTIVE": "El usuario no está activado",
+        "USER_EXIST_ERROR": "El usuario no existe",
+        "USER_PROVIDE": "Por favor suministre el usuario",
+        "SERVER_ERROR": "Error al comunicarse con el servidor",
+        "USER_NOT_VALID": "Usuario no válido",
+        "GOOGLE_VALIDATION_ERROR": "Error al validarse con Google"
+    },
+    "HEADER_TS": {
+        "SERVER_ERROR": "Error al comunicarse con el servidor"
+    },
+    "TOKEN_INTERCEPTOR_TS": {
+        "AUTH_FAILED": "Autenticación fallida"
+    },
+    "BIENVENIDA_HTML": {
+        "WELCOME": "Bienvenido",
+        "KNOW_CULTOTIPO": "¿Quieres conocer tu Cultotipo?",
+        "QUESTIONS_INFO_COMPLETE": "Completa las siguientes preguntas y descubre qué tipo de consumidor cultural e",
+        "QUESTIONS_INFO_RECOMENDATION": "Además, conocerte mejor nos ayudará a recomendarte eventos que encajen en tu perfil para que puedas sacar el mayor partido a nuestra App",
+        "ASK_ME": "Claro, pregúntame",
+        "OTHERWISE": "Mejor en otro momento"
+    },
+    "BONOS_DISPONIBLES_HTML": {
+        "BONUSES_TITLE": "Tus bonos",
+        "DELESTE_FESTIVAL": "Festival Deleste",
+        "DISCOUNT": "10% de descuento en entrada",
+        "DATE": "28/11/2019",
+        "SHOW_QR": "Ver QR",
+        "OTHERWISE": "Mejor en otro momento"
+    },
+    "CULTOTIPO_HTML": {
+        "YOU_ARE": "Eres ",
+        "EDIT_PROFILE": "Editar tu perfil",
+        "GO_HOME": "Ir al inicio"
+    },
+    "CULTOTIPO_TS": {
+        "SERVER_ERROR": "Error al comunicarse con el servidor"
+    },
+    "DASHBOARD_HTML": {
+        "HELLO": "Hola",
+        "YOU_WANT_TO_DO": "¿Qué quieres hacer?",
+        "BONUSES_USE": "Usar el bono",
+        "EVALUATE": "Evaluar",
+        "RECOMENDATIONS": "Hoy te recomendamos",
+        "SHOW_MORE": "Ver más"
+    },
+    "DASHBOARD_TS": {
+        "SERVER_ERROR": "Error al comunicarse con el servidor"
+    },
+    "DATOS_PERSONALES_HTML": {
+        "PERSONAL_DATA": "Datos personales",
+        "BIRTHDATE": "Fecha de nacimiento",
+        "SELECT_BIRTHDATE": "Seleccionar fecha",
+        "OK": "Hecho",
+        "CANCEL": "Cancelar",
+        "GENDER": "Género",
+        "MAN": "Hombre",
+        "WOMAN": "Mujer",
+        "COUNTRY": "País",
+        "PROVINCE": "Provincia",
+        "CITY": "Ciudad",
+        "CONTINUE": "CONTINUAR"
+    },
+    "DATOS_PERSONALES_TS": {
+        "SERVER_ERROR": "Error al comunicarse con el servidor",
+        "DATA_ERROR": "Datos erróneos",
+        "SELECT_COUNTRY": "Seleccionar país",
+        "SELECT_PROVINCE": "Seleccionar provincia",
+        "SELECT_CITY": "Seleccionar ciudad"
+    },
+    "EDITAR_USUARIO_HTML": {
+        "NAME": "Nombre",
+        "SURNAME": "Apellidos",
+        "EMAIL": "Email",
+        "PASSWORD": "Contraseña",
+        "PASSWORD_CONFIRMATION": "Confirmar Contraseña",
+        "ACCEPT_COMERCIAL_INFO": "Acepto recibir información comercial relacionada con mis intereses culturales",
+        "ACCEPT_SHARED_DATA": "Acepto que mis datos sean compartidos con instituciones culturales",
+        "MODIFY": "Guardar",
+        "SELECT_COUNTRY": "Seleccionar país",
+        "COUNTRY": "País",
+        "TITLE_MESSAGE": "Editar Perfil",
+        "CULTOTYPE": "Cultotipo",
+        "DISCOVER_CUTLTYPE":"Descubre tu cultotipo"
+    },
+    "EDITAR_USUARIO_TS": {
+        "PASSWORD_CONSISTENCE": "Consistencia contraseña:",
+        "USER_NOT_VALID": "Usuario no válido",
+        "SERVER_ERROR": "Error al comunicarse con el servidor",
+        "MODIFICATION_ERROR": "Modificación incorrecta",
+        "PASSWORD_CONSISTENCE_NOT_EQUALS": "La confirmación de la contraseña no es igual que la contraseña",
+        "PASSWORD_REQUIRED_ERROR": "La contraseña ha de cumplir el criterio de: mínimo 8 caracteres, máximo 20 caracte Ha de tener mayúsculas, minúsculas, números y no ha de tener espacios.",
+        "MODIFIED_USER": "Usuario modificado"
+    },
+    "ENCUESTA_HTML": {
+        "ANSWER": "Responder",
+        "ANSWER_HERE": "Responder aquí...",
+        "ASK_IS_PUBLIC":"Desea que su reseña sea publico?",
+        "YES": "Sí",
+        "NO": "No",
+        "ADVERTISEMENT": "Ten en cuenta que sea lo que sea que conteste a estas preguntas, no va a afectar de ninguna manera a la política de precios del local o la institución. Lo único que pretendemos es tratar de traducir el nivel de satisfacción/bienestar que le ha provocado el evento en valores monetarios.",
+        "RETURN_BACK": "Puedes salir de la encuesta en cualquier momento y completarla más adelante",
+        "SKIP": "Omitir"
+    },
+    "ENCUESTA_TS": {
+        "AMOUNT_ENTER": "Introducir una cantidad",
+        "SURVEY_NOT_AVAILABLE": "Encuesta no disponible",
+        "SURVEY_ERROR": "No se ha suministrado una encuesta",
+        "SERVER_ERROR": "Error al comunicarse con el servidor",
+        "SURVEY_FINISH_ERROR": "Error al finalizar la encuesta",
+        "RESPONSE_SAVE_ERROR": "Error al guardar la respuesta",
+        "NO_IMPACT": "Ningún impacto",
+        "MAXIMUM_IMPACT": "Máximo impacto",
+        "NO_SATISFACTION": "Nada satisfactoria",
+        "MAXIMUM_SATISFACTION": "Muy satisfactoria",
+        "STRONGLY_DISAGREE": "Muy en desacuerdo",
+        "MAXIMUM_AGREE": "Muy de acuerdo"
+    },
+    "ENCUESTA_PERSONAL_HTML": {
+        "RESPONSE": "Responder",
+        "INTRODUCE_NUMBER": "Introducir cifra aquí...",
+        "LITTLE_BIT": "Poco",
+        "A_LOT": "Mucho"
+    },
+    "ENCUESTA_PERSONAL_TS": {
+        "NUMBER_INTRODUCE": "Introducir cifra aquí...",
+        "SERVER_ERROR": "Error al comunicarse con el servidor",
+        "CULTOTIPO_ERROR": "Error al asignar cultotipo",
+        "SURVEY_WTHOUT_QUESTIONS": "Encuesta sin preguntas",
+        "NO_QUESTIONS": "No hay preguntas",
+        "QUESTION_NOT_EXITS": "La pregunta no existe",
+        "NO_SATISFACTION": "Nada satisfactoria",
+        "MAXIMUM_SATISFACTION": "Muy satisfactoria",
+        "STRONGLY_DISAGREE": "Muy en desacuerdo",
+        "MAXIMUM_AGREE": "Muy de acuerdo"
+    },
+    "ENCUESTA_REALIZADA_HTML": {
+        "SURVEY_COMPLETED": "Encuesta/s completadas",
+        "SURVEY_TO_BE_COMPLETED": "Encuesta/s por completar",
+        "SHOW_GLOBAL_RESULTS": "VER RESULTADOS GLOBALES",
+        "KNOW_MORE": "Saber más",
+        "COMPLETE_SURVEY": "Completar Encuesta",
+        "SHOW_RESULTS": "Ver resultados",
+        "LOAD_MORE_SURVEYS": "Cargando más encuestas..."
+    },
+    "ENCUESTA_REALIZADA_TS": {
+        "SERVER_ERROR": "Error al comunicarse con el servidor"
+    },
+    "EVENTOS_DESTACADOS_HTML": {
+        "FIND_YOUR_EVENT": "Busca tu evento",
+        "KNOW_MORE": "Saber más",
+        "EVALUATE": "Evaluar",
+        "LOAD_MORE_EVENTS": "Cargando más eventos..."
+    },
+    "EVENTOS_DESTACADOS_TS": {
+        "SERVER_ERROR": "Error al comunicarse con el servidor"
+    },
+    "EVENT_DETAIL_HTML": {
+        "EVENT_FREE": "Gratis",
+        "BUY_BUTTON": "Comprar entrada",
+        "EVALUATION_BUTTON": "Evaluar",
+        "SAVE_BUTTON": "Guardar",
+        "TITLE_HIDDEN_BUTTON_COMMENT": "Ocultar",
+        "TITLE_SECTION_DETAIL":"Detalle",
+        "TITLE_SECTION_MAP":"Mapa",
+        "TITLE_SECTION_SCHEDULE":"Horario",
+        "TITLE_SECTION_OPINIONS":"Opiniones",
+        "TITLE_SECTION_HOW_TO_GET":"Como llegar"
+    },
+    "EVENT_HOME_HTML": {
+        "TYPE_CATEGORY": "Categoría",
+        "TITLE_MESSAGE_BANNER1": "¡Encuentra nuevas experiencias en ",
+        "TITLE_MESSAGE_BANNER2": " y comparte tu opinión!",
+        "TITLE_NUMBER_EVENT": "Experiencias"
+    },
+    "EVENT_SEARCH_HTML": {
+        
+        "BUTTON_TODAY_MESSAGE": "Hoy",
+        "BUTTON_THIS_WEEK_MESSAGE": "Esta semana",
+        "BUTTON_NEXT_WEEK_MESSAGE": "Siguiente semana",
+        "TITLE_EVENT_DESTACADOS_PLUS":"Eventos Destacados",
+        "MESSAGE_NOT_RESULTS":"Aún no hay ofertas publicadas",
+        "TITLE_MESSAGE": "Explora tu experiencia"
+    },
+    "FICHA_USUARIO_HTML": {
+        "EXIT_ACCOUNT": "Salir de la cuenta",
+        "CULTOTIPO_SURVEY": "Complete la encuesta personal para conocer su Cultotipo.",
+        "SURVEY_TO_BE_COMPLETED": "Encuesta por completar",
+        "FOR_COMPLETE_SURVEY": "Encuesta por completar",
+        "COMPLETED_SURVEYS": "Encuestas completadas",
+        "SHOW_DETAILS": "Ver detalles",
+        "BONUSES_CONSUMED": "Bonos consumidos",
+        "EDIT_PROFILE": "Editar tu perfil",
+        "MODIFY_PERSONAL_SURVEY": "Modificar encuesta personal"
+    },
+    "FICHA_USUARIO_TS": {
+        "SERVER_ERROR": "Error al comunicarse con el servidor"
+    },
+    "QR_HTML": {
+        "SCAN_QR": "Escanear código QR",
+        "SCAN_QR_SURVEY": "Escanee su código QR para ir a una encuesta.",
+        "DEVICES": "Dispositivos",
+        "DEVICES_SELECT": "Seleccione uno",
+        "SCAN": "Escanear",
+        "SCAN_CODE": "Código escaneado"
+    },
+    "QR_TS": {
+        "NOT_SUPPORTED_DEVICES": "No hay dispositivos de vídeo soportados.",
+        "NO_DEVICES": "No hay dispositivos de vídeo.",
+        "CATCHED_DEVICES_ERROR": "No se pudieron recoger los dispositivos",
+        "LOAD_QR_DECODER_ERROR": "No se ha cargado el decodificador de QR.",
+        "SCAN": "Escanear",
+        "SCAN_CODE": "Código escaneado"
+    },
+    "PAGES_INFO_HTML": {
+        "PAGES_ABOUT_US": "sobre nosotros",
+        "PAGES_EVENT_ORGANIZERS": "Organizadores de eventos",
+        "PAGES_COOKIES_POLICY": "Política de cookies",
+        "PAGES_LEGAL_WARNING": "Aviso legal"
+    },
+    "RESULTADOS_ENCUESTA_HTML": {
+        "SURVEY_RESULTS": "Resultados de la encuesta",
+        "SURVEY_RESULTS_GLOBAL": "Resultados globales",
+        "NOT_ANSWERED": "No contestado",
+        "RETURN_LATER": "Aún no se han realizado suficientes encuestas para que puedas comparar tus resultados, vuelve más tarde!"
+    },
+    "RESULTADOS_ENCUESTA_TS": {
+        "EVALUATION": "Tu evaluación",
+        "GENERAL_EVALUATION": "Evaluación general del evento",
+        "EVENT_GENDER_HALF": "Media del evento por tu género",
+        "EVENT_CULTOTIPO_HALF": "Media del evento por tu cultotipo",
+        "EVENT_AGE_HALF": "Media del evento por tu edad",
+        "SERVER_ERROR": "Error al comunicarse con el servidor",
+        "SURVEY_NOT_ALLOWED": "No se ha suministrado una encuesta"
+    },
+    "RESULTADO_BUSQUEDA_HTML": {
+        "EVENTS": "Eventos",
+        "KNOW_MORE": "Saber más",
+        "EVALUATE": "Evaluar",
+        "LOAD_MORE_EVENTS": "Cargando más eventos...",
+        "EVENTS_NOT_FOUND": "Eventos no encontrados"
+    },
+    "RESULTADO_BUSQUEDA_TS": {
+        "SERVER_ERROR": "Error al comunicarse con el servidor",
+        "SEARCH_NOT_ALLOWED": "No se ha suministrado un término de búsqueda"
+    },
+    "RESULTADO_GLOABALES_HTML": {
+        "EVALUATIONS": "Tus valoraciones",
+        "GLOBAL_RESULTS": "Resultados globales"
+    },
+    "RESULTADO_GLOBALES_TS": {
+        "HALF": "Tu media de",
+        "TOTAL_HALF": "Tu media total",
+        "GLOBAL_TOTAL_HALF": "Media total general",
+        "SERVER_ERROR": "Error al comunicarse con el servidor"
+    },
+    "UTILS_SERVICE_TS": {
+        "PLEASE_WAIT": "Por favor espere..."
+    },
+    "SAVED_EVENTS_HTML": {
+        "CONTENT_NOT_FOUND": "No existe experiencias guardados aun!",
+        "PAGE_TITLE":"Experiencias guardadas"
+    },
+    "SLIDER_START_HTML": {
+        "SLIDE_1": "Descubrir los eventos culturales en tu ciudad",
+        "SLIDE_2": "Evaluar eventos y servicios culturales",
+        "SLIDE_3": "Descubrir cual es tu perfil cultural",
+        "READY": "¿Preparado?",
+        "START": "Empecemos",
+        "NEXT": "Siguiente"
+    },
+    "LOTTERY_HTML": {
+        "ONE_MORE_THING": "Aún queda un paso más para poder participar en el SORTEO y descubrir tu cultotipo.",
+        "TAKE_PERSONAL_SURVEY": "¡Haz la encuesta personal!"
+    },
+
+    "FOOTER_LINKS": {
+        "ABOUT_US": "Sobre nosotros",
+        "EVENT_PLANNER": "Organizador de eventos",
+        "COOKIES_POLICY": "Política de cookies",
+        "LEGAL_NOTICE": "Aviso legal"
+    },
+
+    "ENCUESTA_GLOBAL":{
+        "CUENTA_EVENTO": "Cuenta tu última experiencia cultural"
+    },
+
+    "MENU_TOP_LINKS":{
+        "CONFIGURATION": "Configuración",
+        "SAVED_EVENTS": "Guardados",
+        "YOUR_ACTIVITY": "Actividad",
+        "LOG_OUT": "Cerrar sesión"
+    }
+}

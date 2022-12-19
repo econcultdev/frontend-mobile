@@ -1,0 +1,166 @@
+<app-header [verifylogin]="verifylogin"></app-header>
+
+<ion-content class="background-primary">
+  <ion-row class="home-container">
+    <div class="top-page-img">
+      <ion-grid class="container-text-banner">
+        <ion-row class="col-banner1">
+          <h3> {{ 'EVENT_HOME_HTML.TITLE_MESSAGE_BANNER1' | translate }}
+            <br>{{cityNameChild}}
+            {{ 'EVENT_HOME_HTML.TITLE_MESSAGE_BANNER2' | translate }}
+          </h3>
+        </ion-row>
+        <ion-row>
+          <h3>{{eventosSearch.length}} <br>{{ 'EVENT_HOME_HTML.TITLE_NUMBER_EVENT' | translate }}</h3>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+  </ion-row>
+
+  <ion-grid class="background-primary" style="width: 100%;">
+    <ion-row class="home-explore-container">
+      <ion-row class="search-explore" size="3">
+        <div class="group-search-explore">
+          <h4>{{ 'EVENT_SEARCH_HTML.TITLE_MESSAGE' | translate }}</h4>
+          <app-city-location></app-city-location>
+          <ion-row>
+            <div class="wrapper-button">
+              <ion-button id="button_today" (click)="change_today()" color="white"
+                class="color-primary group-button active">{{
+                'EVENT_SEARCH_HTML.BUTTON_TODAY_MESSAGE'
+                |
+                translate
+                }}</ion-button>
+              <ion-button id="button_this_week" (click)="change_this_week()" color="white"
+                class="color-primary group-button">
+              <div >
+                <p>{{
+                  'EVENT_SEARCH_HTML.BUTTON_THIS_WEEK_MESSAGE'
+                  |
+                  translate }}</p>
+              </div></ion-button>
+              <ion-button id="button_next_week" (click)="change_next_week()" color="white"
+                class="color-primary group-button">
+                <div><p >{{
+                  'EVENT_SEARCH_HTML.BUTTON_NEXT_WEEK_MESSAGE'
+                  |
+                  translate }}</p></div>
+              </ion-button>
+            </div>
+          </ion-row>
+          <div class="color-primary group-field" (click)="picker.open()">
+            <div class="bc-primary group-icon">
+              <ion-icon name="calendar" class="icon-field"></ion-icon>
+            </div>
+            <mat-datepicker #picker></mat-datepicker>
+            <input style="background-color:white;" [(ngModel)]="dateFilter" readonly=»readonly» [min]="minDate"
+              [max]="maxDate" [matDatepicker]="picker" (ngModelChange)="changeDateFilter($event)" class="select-text"
+              matInput>
+            <div class="bc-primary group-icon">
+              <ion-icon name="chevron-down-outline" class="icon-field" style="zoom:1.5;"></ion-icon>
+            </div>
+          </div>
+
+            <!--<div class="encuesta-global-filtro">  
+              <button onclick="location.href='#'" class="encuesta-global">
+                <div>
+                  <img src="/assets/img/mas.png" class="mas-icon">
+                  <h4 class="encuesta-global-txt">{{ 'ENCUESTA_GLOBAL.CUENTA_EVENTO' | translate }}</h4>
+                </div>
+              </button>
+            </div>-->
+
+        </div>
+
+      </ion-row>
+
+      <script>
+        function categoryMenuStart() {
+          var categoryMenu = document.querySelector('.category-menu');
+          var categoryMenuDragging = false;
+          var categoryMenuStart;
+          var categoryMenuScroll;
+
+          categoryMenu.addEventListener('mousedown', (e) => {
+            categoryMenuDragging = true;
+            categoryMenu.classList.add('active');
+            categoryMenuStart = e.pageX - categoryMenu.offsetLeft;
+            categoryMenuScroll = categoryMenu.scrollLeft;
+          });
+          categoryMenu.addEventListener('mouseleave', () => {
+            categoryMenuDragging = false;
+            categoryMenu.classList.remove('active');
+          });
+          categoryMenu.addEventListener('mouseup', () => {
+            categoryMenuDragging = false;
+            categoryMenu.classList.remove('active');
+          });
+          categoryMenu.addEventListener('mousemove', (e) => {
+            if (!categoryMenuDragging) return;
+            e.preventDefault();
+            var x = e.pageX - categoryMenu.offsetLeft;
+            var walk = (x - categoryMenuStart) * 3; //scroll-fast
+            categoryMenu.scrollLeft = categoryMenuScroll - walk;
+          });
+        }
+
+        categoryMenuStart();
+
+      </script>
+      <ion-row class="event-list-container">
+        <ion-row class="padding-container">
+          <div class="category-menu">
+            <div *ngFor="let te of tipoeventos" class="category">
+              <ion-button color="white" id="{{te.id}}" (click)="changeTypeEvent(te.id)" class="color-primary button-type-category">
+                <span class="category-icon-container">
+                  <img src="/assets/img/categories/{{te.id}}.svg" class="category-icon"
+                    alt="{{changeAttributesByLanguage(te.nombre, te.nombre_multi)}}">
+                  <span class="category-name">{{changeAttributesByLanguage(te.nombre, te.nombre_multi)}}</span>
+                </span>
+              </ion-button>
+            </div>
+          </div>
+          
+            <div class="encuesta-global-filtro">  
+              <button onclick="location.href='https://www.figma.com/proto/fMmfoIfSczzekaflMO5e1B/Demo-Aucultur?scaling=min-zoom&page-id=0%3A1&node-id=2%3A8&starting-point-node-id=2%3A8';" class="encuesta-global">
+                <div>
+                  <img src="/assets/img/mas.png" class="mas-icon">
+                  <h4 class="encuesta-global-txt">{{ 'ENCUESTA_GLOBAL.CUENTA_EVENTO' | translate }}</h4>
+                </div>
+              </button>
+            </div>
+
+            <h4 *ngIf="eventosSearch.length==0" class="row-search-center">{{ 'EVENT_SEARCH_HTML.MESSAGE_NOT_RESULTS' |
+              translate }}</h4>
+            <app-event-list style="width:100%" *ngIf="eventosSearch" [eventosSearch]="eventosSearch"></app-event-list>
+        </ion-row>
+      </ion-row>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="background-primary" style="width: 100%;">
+    <ion-row *ngIf="eventos_plus" class="eventos-destacados background-primary">
+      <h2 class="title-center-page">{{ 'EVENT_SEARCH_HTML.TITLE_EVENT_DESTACADOS_PLUS' | translate }}</h2>
+      <div *ngFor="let evento_plus of eventos_plus" class="row-search-center box-popular auto-size-font">
+        
+        
+
+        <ion-card [routerLink]="['/homeapp', evento_plus.id]" class="evento-destacado-card">
+          <div class="imagenfull" [ngStyle]="{'background-image': 'url(' + evento_plus.imagen + ')'}"></div>
+          <ion-card-header>
+            <ion-card-title class="evento-title">{{changeAttributesByLanguage(evento_plus.nombre,
+              evento_plus.nombre_multi)}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-row class="box-description-limit line-clamp-box">
+              <p style="height:auto;">{{changeAttributesByLanguage(evento_plus.resumen, evento_plus.resumen_multi)}}</p>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-row>
+  </ion-grid>
+  <app-footer></app-footer>
+</ion-content>
+
+  

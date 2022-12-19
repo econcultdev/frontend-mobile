@@ -1,0 +1,418 @@
+﻿{
+    "LANGUAGE": "Català",
+    "ACTIVATION_HTML": {
+        "TITLE": "Activació de nou usuari",
+        "NAME_USER": "Usuari amb nom: {{username}} creat. Prem el botó per a activar-ho.",
+        "BUTTON_ACTIVE": "Activar",
+        "GO_TO_AUTH": "Anar a autenticar-se",
+        "NEW_TOKEN": "Generar Nou Token"
+    },
+    "ACTIVATION_TS": {
+        "PARAMETERS_ERROR": "Paràmetres incorrectes",
+        "SERVER_ERROR": "Error en comunicar-se amb el servidor",
+        "USER_NOT_FOUND": "No s'ha trobat l'usuari {{username}} en el sistema. Pose's en contacte amb l'administrador si ha registrat aquest usuari o cree'n un de nou.",
+        "TOKEN_NOT_FOUND": "No s'ha trobat un token en el sistema per a l'usuari {{username}}. S'ha reenviat un email a {{email}} amb un nou token.",
+        "EMAIL_NOT_SENT": "No s'ha pogut enviar un email a {{email}}. Intente actualitzar la pàgina. Si succeeix de nou, contacte amb l'administrador.",
+        "TOKEN_NOT_UPDATED": "No s'ha pogut actualitzar el token. Intente actualitzar la pàgina. Si succeeix de nou, contacte amb l'administrador.",
+        "USER_NOT_ACTIVATED": "No s'ha pogut activar l'usuari. Intente actualitzar la pàgina. Si succeeix de nou, contacte amb l'administrador.",
+        "TOKEN_EXPIRED": "El token no és correcte o ha expirat (té una validesa de {{tokenTime}} s).<br />Si vol generar-ne un de nou, prema en l'enllaç perquè se li envie un email",
+        "NEW_TOKEN": "Nou token creat. Revise el seu correu.",
+        "USER_EMPTY": "Usuari buit"
+    },
+    "LIST_EXPERIENCE_EVALUATE_HTML": {
+        "CONTENT_NOT_FOUND": "No hi ha avaluacions disponibles",
+        "PAGE_TITLE": "Experiències a valorar",
+        "SUBTITLE_SCHEDULE": "Quan hi has assistit?"
+    },
+    "LOGIN_TS": {
+        "USER_NO_EXIST": "No existeix l'usuari",
+        "PASSWORD_ERROR": "Contrasenya incorrecta",
+        "TOKEN_CHECK_ERROR": "Error en verificar el token",
+        "USER_NOT_ACCEPTED_PRIVACY_CONDITIONS": "L'usuari no ha acceptat les condicions de privacitat",
+        "USER_NOT_ACTIVE": "L'usuari no està activat",
+        "USER_NOT_EXIST": "L'usuari no existeix",
+        "USER_NOT_SUPPLIED": "Per favor, subministre l'usuari",
+        "SERVER_ERROR": "Error en comunicar-se amb el servidor",
+        "USERNAME_REQUIRED": "Ha d'introduir el nom d'usuari",
+        "USERNAME_REQUIRED_PLEASE": "Ha d'introduir el nom d'usuari",
+        "USER_NOT_FOUND": "Usuari {{username}} no trobat",
+        "EMAIL_SEND": "S'ha enviat un email a {{email}}. Segueix les seues instruccions.",
+        "EMAIL_SEND_ERROR": "Error en enviar el correu a {{email} }. Intente-ho de nou.",
+        "TOKEN_UPDATE_ERROR": "Error intern en actualitzar el token. Intente-ho de nou.",
+        "AGREE": "D'ACORD",
+        "NOT_AGREE": "NO ESTIC D'ACORD"
+    },
+    "LOGIN_HTML": {
+        "TITLE_MESSAGE_WELCOME": "Benvingut de nou!",
+        "USER_REMEMBER": "Recordar usuari",
+        "ENTER": "Entrar",
+        "PASSWORD_CHANGE": "Canviar contrasenya",
+        "I_AM_A_NEW_USER": "Sóc un nou usuari",
+        "OR": "O",
+        "MESSAGE_NOT_HAVE_ACCOUNT": "No tens un compte?",
+        "MESSAGE_SIGN_UP": "Registrar"
+    },
+    "MODIFY_PASSWORD_HTML": {
+        "TITLE": "AU Cultura",
+        "PASSWORD_MODIFY": "Modificació de contrasenya",
+        "GO_TO_AUTH": "Anar a autenticació",
+        "PASSWORD_REQUIRED_ERROR": "La contrasenya ha de complir el criteri de: mínim 8 caràcters, màxim 20 caràcters. Ha d'incloure majúscules, minúscules, nombres i no ha de tindre espais.",
+        "PASSWORD": "CONTRASENYA",
+        "PASSWORD_CONFIRMED": "CONFIRMAR CONTRASENYA",
+        "MODIFY": "Guardar",
+        "GENERATE_NEW_TOKEN": "Generar Nou Token"
+    },
+    "MODIFY_PASSWORD_TS": {
+        "PASSWORD_CONSISTENCE": "Consistència contrasenya:",
+        "PARAMETERS_ERROR": "Paràmetres incorrectes",
+        "PASSWORD_MISSING": "Falta la contrasenya o la confirmació de la contrasenya",
+        "PASSWORD_CONSISTENCE_NOT_EQUALS": "La confirmació de la contrasenya no és igual a la contrasenya",
+        "PASSWORD_REQUIRED_ERROR": "La contrasenya ha de complir el criteri de: mínim 8 caràcters, màxim 20 caràcters. Ha d'incloure majúscules, minúscules, nombres i no ha de tindre espais.",
+        "SERVER_ERROR": "Error en comunicar-se amb el servidor",
+        "PASSWORD_CHANGED": "Contrasenya canviada per a l'usuari {{username}}.",
+        "USER_NOT_FOUND": "No s'ha trobat l'usuari {{username}} en el sistema. Pose's en contacte amb l'administrador si ha registrat aquest usuari o cree'n un de nou.",
+        "TOKEN_GENERATED": "Token generat. S'ha reenviat un email a {{email}} amb un nou token.",
+        "EMAIL_NOT_SENT": "No s'ha pogut enviar un email a {{email}}. Intente actualitzar la pàgina. Si succeeix de nou, contacte amb l'administrador.",
+        "TOKEN_NOT_UPDATED": "No s'ha pogut actualitzar el token. Intente actualitzar la pàgina. Si succeeix de nou, contacte amb l'administrador.",
+        "PASSWORD_NOT_UPDATED": "No s'ha pogut actualitzar la contrasenya. Intente actualitzar la pàgina. Si succeeix de nou, contacte amb l'administrador.",
+        "TOKEN_EXPIRED": "El token no és correcte o ha expirat (té una validesa de {{tokenTime}} s).<br />Si vol generar un token nou, prema en l'enllaç perquè se li envie un email.",
+        "NEW_TOKEN": "Nou token creat. Revise el seu correu."
+    },
+    "REGISTER_HTML": {
+        "TITLE": "Registre d'usuari",
+        "NAME": "NOM",
+        "SURNAME": "COGNOMS",
+        "EMAIL": "EMAIL",
+        "PASSWORD": "CONTRASENYA",
+        "PASSWORD_CONFIRMATION": "CONFIRMA CONTRASENYA",
+        "PASSWORD_CONSISTENCE_NOT_EQUALS": "La confirmació de la contrasenya no és igual a la contrasenya",
+        "PASSWORD_REQUIRED_ERROR": "La contrasenya ha de complir el criteri de: mínim 8 caràcters, màxim 20 caràcters. Ha d'incloure majúscules, minúscules, nombres i no ha de tindre espais.",
+        "PASSWORD_REQUIRED_MINIFY": "La contrasenya ha de complir el criteri de: mínim 8 caràcters, màxim 20 caràcters i no ha de tindre espais.",
+        "LEGAL_PRIVACY_CONDITIONS": "He llegit i accepte les condicions legals i de privacitat",
+        "COMMERCIAL_CULTURAL_INTERESTS": " Accepte rebre informació comercial relacionada amb els meus interessos culturals",
+        "SHARED_DATA": "Accepte que les meues dades siguen compartides amb institucions culturals",
+        "LEGAL_CONDITIONS": "Condicions legals",
+        "TO_REGISTER": "Registrar",
+        "TITLE_MESSAGE": "Registra't",
+        "OR": "O",
+        "MESSAGE_HAVE_ACCOUNT": "Ja tens un compte?",
+        "MESSAGE_LOG_IN": "Iniciar Sessió"
+    },
+    "REGISTER_TS": {
+        "CLOSE": "TANCAR",
+        "PASSWORD_CONSISTENCE": "Consistència contrasenya:",
+        "SERVER_ERROR": "Error en comunicar-se amb el servidor",
+        "INCORRECT_REGISTRATION": "Registre incorrecte",
+        "PASSWORD_MISSING": "Falta la contrasenya o la confirmació de la contrasenya",
+        "PASSWORD_CONSISTENCE_NOT_EQUALS": "La confirmació de la contrasenya no és igual a la contrasenya",
+        "PASSWORD_REQUIRED_ERROR": "La contrasenya ha de complir el criteri de: mínim 8 caràcters, màxim 20 caràcters. Ha d'incloure majúscules, minúscules, nombres i no ha de tindre espais."
+    },
+    "CONTROLMESSAGE_TS": {
+        "REQUIRED": "Requerit",
+        "INVALID_EMAIL_ADDRESS": "Email invàlid",
+        "PASSWORD_REQUIRED_ERROR": "La contrasenya ha de complir el criteri de: mínim 8 caràcters, màxim 20 caràcters. Ha d'incloure majúscules, minúscules, nombres i no ha de tindre espai.",
+        "MIN_LENGTH": "Longitud mínima"
+    },
+    "GOOGLE_LOGIN_HTML": {
+        "LOGIN": "Entrar Google"
+    },
+    "GOOGLE_LOGIN_TS": {
+        "USER_NOT_EXIST": "No existeix l'usuari",
+        "PASSWORD_WRONG": "Contrasenya incorrecta",
+        "TOKEN_ERROR": "Error en verificar el token",
+        "MIN_LENGTH": "Longitud mínima {{length}}",
+        "USER_NOT_ACCEPTED_PRIVACY_CONDITIONS": "L'usuari no ha acceptat les condicions de privacitat",
+        "USER_NOT_ACTIVE": "L'usuari no està activat",
+        "USER_EXIST_ERROR": "L'usuari no existeix",
+        "USER_PROVIDE": "Per favor, subministre l'usuari",
+        "SERVER_ERROR": "Error en comunicar-se amb el servidor",
+        "USER_NOT_VALID": "Usuari no vàlid",
+        "GOOGLE_VALIDATION_ERROR": "Error en validar-se amb Google"
+    },
+    "HEADER_TS": {
+        "SERVER_ERROR": "Error en comunicar-se amb el servidor"
+    },
+    "TOKEN_INTERCEPTOR_TS": {
+        "AUTH_FAILED": "Autenticació fallida"
+    },
+    "BIENVENIDA_HTML": {
+        "WELCOME": "Benvingut",
+        "KNOW_CULTOTIPO": "Vols conèixer el teu Cultotipus?",
+        "QUESTIONS_INFO_COMPLETE": "Completa las següents preguntes i descobreix quin tipus de consumidor cultural eres",
+        "QUESTIONS_INFO_RECOMENDATION": "A més, conéixer-te millor ens ajudarà a recomanar-te els esdeveniments que millor encaixen amb el teu perfil perquè pugues traure el major partit a la nostra App",
+        "ASK_ME": "Clar, pregunta'm",
+        "OTHERWISE": "Millor en altre moment"
+    },
+    "BONOS_DISPONIBLES_HTML": {
+        "BONUSES_TITLE": "Els teus bonus",
+        "DELESTE_FESTIVAL": "Festival Deleste",
+        "DISCOUNT": "10% de descompte en l'entrada",
+        "DATE": "28/11/2019",
+        "SHOW_QR": "Veure QR",
+        "OTHERWISE": "Millor en altre moment"
+    },
+    "CULTOTIPO_HTML": {
+        "YOU_ARE": "Eres ",
+        "EDIT_PROFILE": "Editar el teu perfil",
+        "GO_HOME": "Anar a l'inici"
+    },
+    "CULTOTIPO_TS": {
+        "SERVER_ERROR": "Error en comunicar-se amb el servidor"
+    },
+    "DASHBOARD_HTML": {
+        "HELLO": "Hola",
+        "YOU_WANT_TO_DO": "Què vols fer?",
+        "BONUSES_USE": "Utilitzar el bonus",
+        "EVALUATE": "Avaluar",
+        "RECOMENDATIONS": "Hui et recomanem",
+        "SHOW_MORE": "Veure més"
+    },
+    "DASHBOARD_TS": {
+        "SERVER_ERROR": "Error en comunicar-se amb el servidor"
+    },
+    "DATOS_PERSONALES_HTML": {
+        "PERSONAL_DATA": "Dades personals",
+        "BIRTHDATE": "Data de naixement",
+        "SELECT_BIRTHDATE": "Seleccionar data",
+        "OK": "Fet",
+        "CANCEL": "Cancel·lar",
+        "GENDER": "Gènere",
+        "MAN": "Home",
+        "WOMAN": "Dona",
+        "COUNTRY": "País",
+        "PROVINCE": "Província",
+        "CITY": "Ciutat",
+        "CONTINUE": "CONTINUAR"
+    },
+    "DATOS_PERSONALES_TS": {
+        "SERVER_ERROR": "Error en comunicar-se amb el servidor",
+        "DATA_ERROR": "Dades errònies",
+        "SELECT_COUNTRY": "Seleccionar país",
+        "SELECT_PROVINCE": "Seleccionar província",
+        "SELECT_CITY": "Seleccionar ciutat"
+    },
+    "EDITAR_USUARIO_HTML": {
+        "NAME": "Nom",
+        "SURNAME": "Cognoms",
+        "EMAIL": "Email",
+        "PASSWORD": "Contrasenya",
+        "PASSWORD_CONFIRMATION": "Confirma Contrasenya",
+        "ACCEPT_COMERCIAL_INFO": "Accepte rebre informació comercial relacionada amb els meus interessos culturals",
+        "ACCEPT_SHARED_DATA": "Accepte que les meues dades siguen compartides amb institucions culturals",
+        "MODIFY": "Modificar",
+        "SELECT_COUNTRY": "Seleccionar país",
+        "COUNTRY": "País",
+        "TITLE_MESSAGE": "Editar Perfil",
+        "CULTOTYPE": "Cultotip",
+        "DISCOVER_CUTLTYPE":"Descobreix el teu cultotip"
+    },
+    "EDITAR_USUARIO_TS": {
+        "PASSWORD_CONSISTENCE": "Consistència contrasenya:",
+        "USER_NOT_VALID": "Usuari no vàlid",
+        "SERVER_ERROR": "Error en comunicar-se amb el servidor",
+        "MODIFICATION_ERROR": "Modificació incorrecta",
+        "PASSWORD_CONSISTENCE_NOT_EQUALS": "La confirmació de la contrasenya no és igual que la contrasenya",
+        "PASSWORD_REQUIRED_ERROR": "La contrasenya ha de complir el criteri de: mínim 8 caràcters, màxim 20 caràcters. Ha d'incloure majúscules, minúscules, nombres i no ha de tindre espais.",
+        "MODIFIED_USER": "Usuari modificat"
+    },
+    "ENCUESTA_HTML": {
+        "ANSWER": "Respondre",
+        "ANSWER_HERE": "Respondre ací...",
+        "ASK_IS_PUBLIC":"Voleu que la vostra ressenya sigui pública?",
+        "YES": "Sí",
+        "NO": "No",
+        "ADVERTISEMENT": "Cal que tingues en compte que siga quina siga la teua resposta, aquesta no afectarà de cap manera a la política de preus del local o institució. L'única cosa que pretenem és tractar de traduir el nivell de satisfacció/benestar que li ha provocat l'esdeveniment en valors monetaris.",
+        "RETURN_BACK": "Pots eixir de l'enquesta en qualsevol moment i completar-la més avant",
+        "SKIP": "Ometre"
+    },
+    "ENCUESTA_TS": {
+        "AMOUNT_ENTER": "Introduir una quantitat",
+        "SURVEY_NOT_AVAILABLE": "Enquesta no disponible",
+        "SURVEY_ERROR": "No s'ha subministrat una enquesta",
+        "SERVER_ERROR": "Error en comunicar-se amb el servidor",
+        "SURVEY_FINISH_ERROR": "Error en finalitzar l'enquesta",
+        "RESPONSE_SAVE_ERROR": "Error en guardar la resposta",
+        "NO_IMPACT": "Cap impacte",
+        "MAXIMUM_IMPACT": "Màxim impacte",
+        "NO_SATISFACTION": "Gens satisfactòria",
+        "MAXIMUM_SATISFACTION": "Molt satisfactòria",
+        "STRONGLY_DISAGREE": "Molt en desacord",
+        "MAXIMUM_AGREE": "Molt d'acord"
+    },
+    "ENCUESTA_PERSONAL_HTML": {
+        "RESPONSE": "Respondre",
+        "INTRODUCE_NUMBER": "Introduir xifra ací...",
+        "LITTLE_BIT": "Poc",
+        "A_LOT": "Molt"
+    },
+    "ENCUESTA_PERSONAL_TS": {
+        "AMOUNNUMBER_INTRODUCET_ENTER": "Introduir una quantitat ací",
+        "SERVER_ERROR": "Error en comunicar-se amb el servidor",
+        "CULTOTIPO_ERROR": "Error en assignar Cultotipus",
+        "SURVEY_WTHOUT_QUESTIONS": "Enquesta sense preguntes",
+        "NO_QUESTIONS": "No hi ha preguntes",
+        "QUESTION_NOT_EXITS": "La pregunta no existeix",
+        "NO_SATISFACTION": "Gens satisfactòria",
+        "MAXIMUM_SATISFACTION": "Molt satisfactòria",
+        "STRONGLY_DISAGREE": "Molt en desacord",
+        "MAXIMUM_AGREE": "Molt d'acord"
+    },
+    "ENCUESTA_REALIZADA_HTML": {
+        "SURVEY_COMPLETED": "Enquesta/es completada/des",
+        "SURVEY_TO_BE_COMPLETED": "Enquesta/es per completar",
+        "SHOW_GLOBAL_RESULTS": "VEURE RESULTATS GLOBALS",
+        "KNOW_MORE": "Saber més",
+        "COMPLETE_SURVEY": "Completar Enquesta",
+        "SHOW_RESULTS": "Veure resultats",
+        "LOAD_MORE_SURVEYS": "Carregant més enquestes..."
+    },
+    "ENCUESTA_REALIZADA_TS": {
+        "SERVER_ERROR": "Error en comunicar-se amb el servidor"
+    },
+    "EVENTOS_DESTACADOS_HTML": {
+        "FIND_YOUR_EVENT": "Busca el teu esdeveniment",
+        "KNOW_MORE": "Saber més",
+        "EVALUATE": "Avaluar",
+        "LOAD_MORE_EVENTS": "Carregant més esdeveniments..."
+    },
+    "EVENTOS_DESTACADOS_TS": {
+        "SERVER_ERROR": "Error en comunicar-se amb el servidor"
+    },
+    "EVENT_DETAIL_HTML": {
+        "EVENT_FREE": "Gratuït",
+        "BUY_BUTTON": "Comprar entrades",
+        "EVALUATION_BUTTON": "Avaluar",
+        "SAVE_BUTTON": "Guardar",
+        "TITLE_HIDDEN_BUTTON_COMMENT": "Amagar",
+        "TITLE_SECTION_DETAIL": "Detalle",
+        "TITLE_SECTION_MAP": "Mapa",
+        "TITLE_SECTION_SCHEDULE": "Horari",
+        "TITLE_SECTION_OPINIONS": "Opinions",
+        "TITLE_SECTION_HOW_TO_GET": "Com arribar"
+        
+    },
+    "EVENT_HOME_HTML": {
+        "TYPE_CATEGORY": "Categoria",
+        "TITLE_MESSAGE_BANNER1": "Troba noves experiències a ",
+        "TITLE_MESSAGE_BANNER2": " i comparteix la teva opinió! ",
+        "TITLE_NUMBER_EVENT": "Experiències"
+    },
+    "EVENT_SEARCH_HTML": {
+        "BUTTON_TODAY_MESSAGE": "Hui",
+        "BUTTON_THIS_WEEK_MESSAGE": "Aquesta setmana",
+        "BUTTON_NEXT_WEEK_MESSAGE": "Pròxima setmana",
+        "TITLE_EVENT_DESTACADOS_PLUS": "Esdeveniments Destacats",
+        "MESSAGE_NOT_RESULTS": "Encara no hi ha ofertes publicades",
+        "TITLE_MESSAGE": "Explora la teva experiència"
+        
+    },
+    "FICHA_USUARIO_HTML": {
+        "EXIT_ACCOUNT": "Eixir del compte",
+        "CULTOTIPO_SURVEY": "Completa l'enquesta personal per a conèixer el teu Cultotipus",
+        "SURVEY_TO_BE_COMPLETED": "Enquesta per completar",
+        "FOR_COMPLETE_SURVEY": "Enquesta per completar",
+        "COMPLETED_SURVEYS": "Enquestes completades",
+        "SHOW_DETAILS": "Veure detalls",
+        "BONUSES_CONSUMED": "Bonus consumits",
+        "EDIT_PROFILE": "Editar el teu perfil",
+        "MODIFY_PERSONAL_SURVEY": "Modificar enquesta personal"
+    },
+    "FICHA_USUARIO_TS": {
+        "SERVER_ERROR": "Error en comunicar-se amb el servidor"
+    },
+    "QR_HTML": {
+        "SCAN_QR": "Escanejar codi QR",
+        "SCAN_QR_SURVEY": "Escanege el seu codi QR per a anar a una enquesta.",
+        "DEVICES": "Dispositius",
+        "DEVICES_SELECT": "Seleccione'n un",
+        "SCAN": "Escanejar",
+        "SCAN_CODE": "Codi escanejat"
+    },
+    "QR_TS": {
+        "NOT_SUPPORTED_DEVICES": "No hi ha dispositius de vídeo suportats.",
+        "NO_DEVICES": "No hi ha dispositius de vídeo.",
+        "CATCHED_DEVICES_ERROR": "No s'han pogut recollir els dispositius",
+        "LOAD_QR_DECODER_ERROR": "No s'ha carregat el decodificador de QR.",
+        "SCAN": "Escanejar",
+        "SCAN_CODE": "Codi escanejat"
+    },
+    "PAGES_INFO_HTML": {
+        "PAGES_ABOUT_US": "sobre nosaltres",
+        "PAGES_EVENT_ORGANIZERS": "Organitzadores d'esdeveniments",
+        "PAGES_COOKIES_POLICY": "Política de cookies",
+        "PAGES_LEGAL_WARNING": "Avís legal"
+    },
+    "RESULTADOS_ENCUESTA_HTML": {
+        "SURVEY_RESULTS": "Resultats de l'enquesta",
+        "SURVEY_RESULTS_GLOBAL": "Resultats globals",
+        "NOT_ANSWERED": "No contestat",
+        "RETURN_LATER": "Encara no s'han fet suficients enquestes perquè pugues comparar els teus resultats. Torna més tard!"
+    },
+    "RESULTADOS_ENCUESTA_TS": {
+        "EVALUATION": "La teua avaluació",
+        "GENERAL_EVALUATION": "Avaluació general de l'esdeveniment",
+        "EVENT_GENDER_HALF": "Mitjana de l'esdeveniment pel teu gènere",
+        "EVENT_CULTOTIPO_HALF": "Mitjana de l'esdeveniment pel teu Cultotipus",
+        "EVENT_AGE_HALF": "Mitjana de l'esdeveniment per la teua edat",
+        "SERVER_ERROR": "Error en comunicar-se amb el servidor",
+        "SURVEY_NOT_ALLOWED": "No s'ha subministrat una enquesta"
+    },
+    "RESULTADO_BUSQUEDA_HTML": {
+        "EVENTS": "Esdeveniments",
+        "KNOW_MORE": "Saber-ne més",
+        "EVALUATE": "Avaluar",
+        "LOAD_MORE_EVENTS": "Carregant més esdeveniments ...",
+        "EVENTS_NOT_FOUND": "No s'han trobat esdeveniments"
+    },
+    "RESULTADO_BUSQUEDA_TS": {
+        "SERVER_ERROR": "Error en comunicar-se amb el servidor",
+        "SEARCH_NOT_ALLOWED": "No s'ha subministrat un terme de recerca"
+    },
+    "RESULTADO_GLOABALES_HTML": {
+        "EVALUATIONS": "Les teues valoracions",
+        "GLOBAL_RESULTS": "Resultats globals"
+    },
+    "RESULTADO_GLOBALES_TS": {
+        "HALF": "La teua mitjana de",
+        "TOTAL_HALF": "La teua mitjana total",
+        "GLOBAL_TOTAL_HALF": "Mitjana total general",
+        "SERVER_ERROR": "Error en comunicar-se amb el servidor"
+    },
+    "UTILS_SERVICE_TS": {
+        "PLEASE_WAIT": "Per favor, espere..."
+    },
+    "SAVED_EVENTS_HTML": {
+        "CONTENT_NOT_FOUND": "No hi ha experiències guardats encara!",
+        "PAGE_TITLE": "Experiències guardades"
+    },
+    "SLIDER_START_HTML": {
+        "SLIDE_1": "Descobrir els esdeveniments culturals a la teua ciutat",
+        "SLIDE_2": "Avaluar esdeveniments i serveis culturals",
+        "SLIDE_3": "Descobrir quin és el teu perfil cultural",
+        "READY": "Preparat?",
+        "START": "Comencem",
+        "NEXT": "Següent"
+    },
+    "LOTTERY_HTML": {
+        "ONE_MORE_THING": "Encara queda un pas més per poder participar en el SORTEIG i descobrir el teu cultotipus.",
+        "TAKE_PERSONAL_SURVEY": "Fes l'enquesta personal!"
+    },
+
+    "FOOTER_LINKS": {
+        "ABOUT_US": "Sobre nosaltres",
+        "EVENT_PLANNER": "Organitzador d'esdeveniments",
+        "COOKIES_POLICY": "Política de cookies",
+        "LEGAL_NOTICE":"Avís legal"
+    },
+
+    "ENCUESTA_GLOBAL":{
+        "CUENTA_EVENTO": "Conta'ns la teua última experiència cultural"
+    },
+
+    "MENU_TOP_LINKS":{
+        "CONFIGURATION": "Configuració",
+        "SAVED_EVENTS": "Guardats",
+        "YOUR_ACTIVITY": "Activitat",
+        "LOG_OUT": "Tanca sessió"
+    }
+}

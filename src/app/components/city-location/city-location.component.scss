@@ -1,0 +1,31 @@
+.group-field {
+    border: 1px solid;
+    width: 100%;
+    height: 49px;
+    border-radius: 0.25rem;
+    text-align: flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.group-icon {
+    border-right: 1px solid;
+    width: 75px;
+    height: 48px;
+    border-radius: 0.25rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-field {
+    width: 20px;
+    height: 20px;
+    color: white;
+}
+.select-text{
+    width: 100%;
+    font-size:16px
+}
+

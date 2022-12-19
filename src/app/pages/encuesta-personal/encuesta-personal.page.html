@@ -1,0 +1,111 @@
+<app-header></app-header>
+<ion-content *ngIf="loaded">
+  <ion-grid *ngIf="pregunta">
+    <ion-row class="ion-justify-content-center ion-padding-bottom">
+      <ion-col size="10">
+        <ion-progress-bar value="{{progress}}" color="primary"></ion-progress-bar>
+      </ion-col>
+    </ion-row>
+    <!-- Pregunta -->
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" class="ion-text-center">
+        <div class="titulo-principal">
+          <h3>{{changeAttributesByLanguage(pregunta.pregunta, pregunta.pregunta_multi)}}</h3>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <!-- Selección de respuestas con radios -->
+    <ion-row class="ion-justify-content-center" *ngIf="pregunta.TipoPregunta.tipo === 'Listado'">
+      <ion-col size="12">
+        <ion-list *ngFor="let respuesta of respuestas" >
+          <ion-radio-group allow-empty-selection="false" (ionChange)="onClickRespuesta(respuesta.valor)">
+            <ion-item lines="none" lines="none" >
+              <ion-label class="ion-text-wrap">
+                {{changeAttributesByLanguage(respuesta.respuesta, respuesta.respuesta_multi)}}
+              </ion-label>
+              <ion-radio value="{{respuesta.valor}}" checked="respuesta.checked">
+              </ion-radio>
+            </ion-item>
+
+          </ion-radio-group>
+        </ion-list>
+      </ion-col>
+      <!-- Boton opcional -->
+      <ion-col size="auto" *ngIf="checked">
+        <ion-item lines="none">
+          <ion-button (click)="onClickRespuesta('')" class="btn" size="large">
+            {{ 'ENCUESTA_PERSONAL_HTML.RESPONSE' | translate }}
+          </ion-button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <!-- Selección de respuestas con radios -->
+    <ion-row class="ion-justify-content-center"
+      *ngIf="pregunta.TipoPregunta.tipo_multi && pregunta.TipoPregunta.tipo_multi.en && pregunta.TipoPregunta.tipo_multi.en.toLowerCase() === 'language list'">
+      <ion-col size="9">
+        <ion-select placeholder="{{ 'QR_HTML.DEVICES_SELECT' | translate }}" (ionChange)="changeMotherTongue($event)"
+          multiple="false" [ngModel]="motherTongue">
+          <ion-select-option *ngFor="let respuesta of respuestas" [value]="respuesta.valor">
+            {{changeAttributesByLanguage(respuesta.respuesta, respuesta.respuesta_multi)}}
+          </ion-select-option>
+        </ion-select>
+      </ion-col>
+
+      <!-- Boton opcional -->
+      <ion-col size="auto">
+        <ion-item lines="none">
+          <ion-button (click)="onClickRespuesta(motherTongue)" class="btn" size="large">
+            {{ 'ENCUESTA_PERSONAL_HTML.RESPONSE' | translate }}
+          </ion-button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <!-- Respuesta Cifra en Input -->
+    <ion-row class="ion-justify-content-center" *ngIf="pregunta.TipoPregunta.tipo === 'Número'">
+      <ion-col size="10">
+        <ion-item>
+          <ion-input type="number" placeholder="{{numberIntroduce}}" [(ngModel)]="valor" [value]="valor">
+          </ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="auto">
+        <ion-item lines="none">
+          <ion-button class="btn" size="large" (click)="onClickRespuesta('', 'string')" [disabled]="valor < 0">
+            {{ 'ENCUESTA_PERSONAL_HTML.RESPONSE' | translate }}
+          </ion-button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <!-- Selección de respuesta con botones con números -->
+    <ion-row class="ion-justify-content-center" *ngIf="pregLimits.init > 0 && pregLimits.end > 0">
+      <ion-col size="auto" class="encuesta__respuesta-seleccion">
+        <div class="encuesta__respuesta-texto-superior">
+          {{ 'ENCUESTA_PERSONAL_HTML.LITTLE_BIT' | translate }}
+        </div>
+        <ion-list>
+          <ion-item lines="none" class="ion-text-center">
+            <ion-button expand="block" fill="outline" size="large" (click)="onClickRespuesta(pregLimits.init)">
+              {{pregLimits.init}}</ion-button>
+          </ion-item>
+          <ion-item lines="none" *ngFor="let n of this.pregLimits.arr">
+            <ion-button (click)="onClickRespuesta(n)">
+              <ion-label class="ion-text-wrap">{{n}}</ion-label>
+            </ion-button>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-button expand="block" fill="outline" size="large" (click)="onClickRespuesta(pregLimits.end)">
+              {{pregLimits.end}}</ion-button>
+          </ion-item>
+        </ion-list>
+
+        <div class="encuesta__respuesta-texto-inferior">
+          {{ 'ENCUESTA_PERSONAL_HTML.A_LOT' | translate }}
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

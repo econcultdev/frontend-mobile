@@ -1,0 +1,7 @@
+
+
+<!--div class="container" routerLink="/app/homeapp"-->
+<div class="container" (click)="navigate()">
+  <div class="outer" *ngIf="photo" [ngStyle]="{'background-image': 'url(' + photo + ')', 'background-position': 'center'}"></div>
+  <div class="outer" *ngIf="!photo" [ngStyle]="{'background-image': 'url(/assets/img/usuario_sin_imagen.svg)', 'background-position': 'center'}"></div>
+</div>

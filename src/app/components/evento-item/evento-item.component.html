@@ -1,0 +1,67 @@
+<ion-list>
+  <ion-item (click)="showEvent(evento.id)"  *ngFor="let evento of eventos"
+    style="border-radius:10px; border: 1px ; width: 97%; height:135px; background-color: #FF5500; margin: 10px; color: white; padding-inline-end:unset">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div>
+            <h6 style="padding-left: 0%; padding-top: 0%; margin-top: 0%; color: rgb(255, 255, 255);">
+              {{evento.nombre}}</h6>
+            <p *ngIf="(evento.fecha_inicio | date : 'MMM dd yyyy')  == (evento.fecha_fin | date : 'MMM dd yyyy'); else notShowD"
+              style="color: white;">
+              <ion-icon name="calendar"></ion-icon>
+              <!--ion-icon name="calendar-outline"></ion-icon-->
+              {{evento.fecha_inicio | date : 'MMM dd yyyy'}}
+            </p>
+            <ng-template #notShowD style="color: white;">
+              <p>
+                <ion-icon name="calendar"></ion-icon>
+                {{evento.fecha_inicio | date : 'MMM dd yyyy'}} - {{evento.fecha_fin | date : 'MMM dd yyyy'}}
+              </p>
+            </ng-template>
+            <!--p style="color: white; padding-top:0%; padding-bottom: 0%; margin-top: 0%;margin-bottom: 0%;">
+              <ion-icon name="calendar"></ion-icon>
+              {{evento.fecha_inicio | date : 'MMM dd yyyy'}} - {{evento.fecha_fin | date : 'MMM dd yyyy'}}
+            </p-->
+
+            <p *ngIf="evento.hora; else notShowH" style="color: white">
+              {{evento.hora}}
+            </p>
+            <ng-template #notShowH>
+              <p *ngIf="(evento.fecha_inicio | date : 'MMM dd yyyy')  == (evento.fecha_fin | date : 'MMM dd yyyy') && (evento.fecha_inicio | date : 'h:mm')  == (evento.fecha_fin | date : 'h:mm'); else notShowH"
+                style="color: white">
+                <ion-icon name="time"></ion-icon>
+                {{evento.fecha_inicio | date : 'h:mm'}}
+              </p>
+              <ng-template #notShowH>
+                <p style="color: white">
+                  <ion-icon name="time"></ion-icon>
+                  {{evento.fecha_inicio | date : 'h:mm'}} - {{evento.fecha_fin | date : 'h:mm'}}
+                </p>
+              </ng-template>
+            </ng-template>
+            <p *ngIf="evento.direccion"
+              style="color: white; padding-top:0%; padding-bottom: 0%; margin-top: 0%;margin-bottom: 0%;">
+              <ion-icon name="location"></ion-icon>
+              <!--ion-icon name="location-outline"></ion-icon-->
+              {{changeAttributesByLanguage(evento.direccion, evento.direccion_multi)}}
+            </p>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div style="width: 150px">
+            <ion-thumbnail slot="end" style="width: max-content;height: max-content; margin: 0px;padding: 0px;">
+              
+
+              <!--div *ngIf="evento.imagen">
+                <img [attr.src]="evento.imagen | secure | async" alt="">
+              </div-->
+            </ion-thumbnail>
+          </div>
+          <ion-col></ion-col>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-item>
+</ion-list>

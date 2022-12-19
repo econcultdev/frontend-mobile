@@ -1,0 +1,181 @@
+<!doctype html>
+<html class="no-js" lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <title>Aucultur Insights</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+  <div id="app">
+    <header class="main-header">
+      <div class="container flex align-center">
+        <a class="logo" href="#"><span class="sr-only">Aucultur</span></a>
+        
+        <div class="change-experience-menu flex align-center">
+            <h1 class="venue-name"></h1><h2 class="experience-name"></h2>
+          <button class="change-experience-menu dropdown"><span class="sr-only" data-locale="experience_menu">Cambiar experiencia</span></button>
+        </div>
+        
+        <div class="datepicker submenu-container right">
+          <button class="btn dropdown datepicker-button submenu-toggle icon icon-calendar">
+            <span class="sr-only" data-locale="change_dates">Modificar fechas seleccionadas: </span>
+            <span class="date-range">16/01/2022-16/01/2022</span>
+          </button>
+          <div class="datepicker-selector submenu">
+            <div class="flex justify-center align-center">
+              <fieldset>
+                <label for="start" data-locale="start">Inicio:</label>
+                <input type="date" id="start" name="date-start" value="2022-01-16" min="2022-01-16" max="2022-01-16">
+              </fieldset>
+              <fieldset>
+                <label for="start" data-locale="end">Fin:</label>
+                <input type="date" id="end" name="date-end" value="2022-01-16" min="2022-01-16" max="2022-01-16">
+              </fieldset>
+            </div>
+            <div class="flex flex-end">
+              <button class="btn datepicker-change-date" data-locale="change">Modificar</button>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </header>
+    
+    <div id="dashboard" class="main-section dashboard">
+      <div class="container grid-desktop">
+        <div class="col-8">
+          <section class="col-8 flex flex-column dashboard-block block-global-score">
+            <header class="block-content flex space-between align-center">
+              <h3 data-locale="overall">Valoración general</h3>
+              <div class="filters submenu-container right">
+                <button class="btn filters-open submenu-toggle dropdown off"><span class="icon icon-filter"></span><span class="sr-only" data-locale="demographic"></span></button>
+                <div class="filters-menu submenu">
+                  <fieldset>
+                      <label data-locale="age">Rango de edad</label>
+                      <select name="age" class="select" autocomplete="off">
+                         <option value="" data-locale="all">Todos</option>
+                         <option value="13_17" disabled>13-17</option>
+                         <option value="18_24" disabled>18-24</option>
+                         <option value="25_24" disabled>25-34</option>
+                         <option value="35_44" disabled>35-44</option>
+                         <option value="45_54" disabled>45-54</option>
+                         <option value="55_64" disabled>55-64</option>
+                         <option value="65_plus" disabled>65+</option>
+                      </select>
+                  </fieldset>
+                  <fieldset>
+                      <label data-locale="gender">Género</label>
+                      <select name="genre" class="select" autocomplete="off">
+                         <option value="" data-locale="all">Todos</option>
+                         <option value="male" disabled data-locale="men">Hombre</option>
+                         <option value="female" disabled data-locale="women">Mujer</option>
+                         <option value="other" disabled data-locale="other_gender">Otros géneros</option>
+                      </select>
+                  </fieldset>
+                </div>
+              </div>
+            </header>
+            <div class="chart-options flex align-center">
+              <div class="label" data-locale="chart">Ver: </div>
+              <label for="chart_average"><input type="radio" id="chart_average" name="chart_type" value="radar" checked> <span data-locale="average"></span></label>
+              <label for="chart_dates"><input type="radio" id="chart_dates" value="bar" name="chart_type"> <span data-locale="days"></span></label>
+              <div class="label" data-locale="data">Datos: </div>
+              <label for="score_global"><input type="checkbox" id="score_global" name="global" checked> <span data-locale="score_global_short"></span></label>
+              <label for="score_aesthetic"><input type="checkbox" id="score_aesthetic" name="aesthetic" checked> <span data-locale="score_aesthetic_short"></span></label>
+              <label for="score_social"><input type="checkbox" id="score_social" name="social" checked> <span data-locale="score_social_short"></span></label>
+              <label for="score_emotional"><input type="checkbox" id="score_emotional" name="emotional" checked> <span data-locale="score_emotional_short"></span></label>
+              <!-- label for="score_identity"><input type="checkbox" id="score_identity" name="identity" checked> Identidad</label -->
+              <label for="score_cognitive"><input type="checkbox" id="score_cognitive" name="cognitive" checked> <span data-locale="score_cognitive_short"></span></label>
+            </div>
+            <div class="block-content chart-space flex flex-column justify-center text-center">
+              <div class="no-data hidden">
+                <p data-locale="no_data">No se han encontrado datos</p>
+              </div>
+              <div class="chart-container"></div>
+            </div>
+          </section>
+        </div>
+        <div class="col-4">
+          
+          <section class="flex flex-column dashboard-block block-score-price">
+            <header class="block-content flex space-between align-center">
+              <h3 data-locale="max_price">Precio máximo usuario</h3>
+              <div class="filters submenu-container right">
+                <button class="btn filters-open submenu-toggle dropdown off"><span class="icon icon-filter"></span><span class="sr-only" data-locale="demographic"></span></button>
+                <div class="filters-menu submenu">
+                  <fieldset>
+                      <label data-locale="age">Rango de edad</label>
+                      <select name="age" class="select" autocomplete="off">
+                         <option value="" data-locale="all">Todos</option>
+                         <option value="13_17" disabled>13-17</option>
+                         <option value="18_24" disabled>18-24</option>
+                         <option value="25_24" disabled>25-34</option>
+                         <option value="35_44" disabled>35-44</option>
+                         <option value="45_54" disabled>45-54</option>
+                         <option value="55_64" disabled>55-64</option>
+                         <option value="65_plus" disabled>65+</option>
+                      </select>
+                  </fieldset>
+                  <fieldset>
+                      <label data-locale="gender">Género</label>
+                      <select name="genre" class="select" autocomplete="off">
+                         <option value="" data-locale="all">Todos</option>
+                         <option value="male" disabled data-locale="men">Hombre</option>
+                         <option value="female" disabled data-locale="women">Mujer</option>
+                         <option value="other" disabled data-locale="other_gender">Otros géneros</option>
+                      </select>
+                  </fieldset>
+                </div>
+              </div>
+            </header>
+            <div class="block-content chart-space">
+              <div class="chart-container"></div>
+            </div>
+            <div class="block-content flex align-center flex-end">
+              <span class="label" data-locale="max_price_avg">Precio máx. medio: </span>
+              <span class="big-number">N/A</span>
+            </div>
+          </section>
+          
+          <section class="flex flex-column dashboard-block block-reviews">
+            <header class="block-content flex space-between align-center">
+              <h3 data-locale="reviews">Reseñas</h3>
+            </header>
+            <div class="block-content text-space">
+            </div>
+          </section>
+          
+        </div>
+      </div>
+    </div>
+    
+    <footer class="main-footer">
+      <div class="container flex mobile-column justify-center align-center desktop-space-between">
+        <div class="links flex align-center mobile-column">
+          <a data-locale="about" href="https://econcult.eu/au_cultur-una-plataforma-para-la-evaluacion-de-los-impactos-por-la-asistencia-a-eventos-culturales/" target="_blank">Sobre Aucultur</a>
+          <a data-locale="legal" href="#">Aviso legal</a>
+          <a data-locale="cookies" href="#">Política de cookies</a>
+        </div>
+        <div class="logos flex align-center justify-center mobile-column">
+          <a href="https://www.mesoc-project.eu/" target="_blank"><img src="img/logos_mesoc.png" alt="MESOC"></a>
+          <a href="https://www.uv.es/" target="_blank"><img src="img/logos_uv.png" alt="Universitat de València"></a>
+          <a href="https://www.upv.es/" target="_blank"><img src="img/logos_upv.png" alt="Universitat Politècnica de València"></a>
+          <a href="https://innoavi.es/es/" target="_blank"><img src="img/logos_avi.png" alt="Generalitat Valenciana - Agència Valenciana de la Innovació"></a>
+        </div>
+      </div>
+    </footer>
+  
+  </div>
+  
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  
+</body>
+</html>

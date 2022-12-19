@@ -1,0 +1,111 @@
+<app-header></app-header>
+
+<ion-content *ngIf="loaded">
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="auto">
+        <ng-container *ngIf="numEncuestas && numEncuestas.finalizadas">
+          <h2>
+            {{numEncuestas.finalizadas}} {{ 'ENCUESTA_REALIZADA_HTML.SURVEY_COMPLETED' | translate }}
+          </h2>
+        </ng-container>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="auto">
+        <ion-list *ngIf="tipoEventos.length">
+          <div class="encuestas-realizadas__contenedor-chips ion-padding" *ngIf="tipoEventos.length">
+            <ion-chip *ngFor="let tipoEvento of tipoEventos">
+              <ion-label>
+                {{tipoEvento.num}} {{tipoEvento.nombre}}
+              </ion-label>
+            </ion-chip>
+          </div>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="auto">
+        <ion-item lines="none" *ngIf="numEncuestas.noFinalizadas">
+          <h2>{{numEncuestas.noFinalizadas}} {{ 'ENCUESTA_REALIZADA_HTML.SURVEY_TO_BE_COMPLETED' | translate }}</h2>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="auto">
+        <ion-item lines="none" *ngIf="numEncuestas.finalizadas">
+          <ion-button type="button" expand="block" class="btn" size="default" fill="solid" (click)="globalResults()">
+            {{ 'ENCUESTA_REALIZADA_HTML.SHOW_GLOBAL_RESULTS' | translate }}
+          </ion-button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let encuesta of encuestasScroll" class="ion-justify-content-center">
+      <ion-col size="10" *ngIf="encuesta">
+        <ion-card class="evento-card-sml">
+
+          <div *ngIf="encuesta.imgUrl">
+            <img [attr.src]="encuesta.imgUrl | secure | async">
+          </div>
+
+          <ion-card-header>
+
+            <ion-card-subtitle>
+              <div class="ion-text-nowrap evento-card-lrg__detalles">
+                <div class="evento-card-lrg__categoria-ubicacion">
+                  <ion-text color="primary" *ngIf="encuesta.Eventos.TipoEvento.nombre">
+                    {{encuesta.Eventos.TipoEvento.nombre}}</ion-text> / <ion-text color="dark"
+                    *ngIf="encuesta.Eventos.direccion">{{encuesta.Eventos.direccion}}</ion-text>
+                </div>
+              </div>
+            </ion-card-subtitle>
+
+            <ion-card-title>
+              <ion-text color="primary">
+                <h2>
+                  {{encuesta.Eventos.nombre}}
+                </h2>
+              </ion-text>
+            </ion-card-title>
+
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-item class="ion-padding-bottom" lines="none" *ngIf="encuesta.Eventos.resumen">
+              <p>{{encuesta.Eventos.resumen}}</p>
+            </ion-item>
+
+            <ion-segment class="btn-segment">
+              <ion-segment-button class="btn-segment__bono" layout="icon-start" type="button" color="dark"
+                *ngIf="encuesta.Eventos.link_externo" (click)="openUrl(encuesta.Eventos.link_externo)">
+                <ion-icon name="information-circle-outline"></ion-icon>
+                {{ 'ENCUESTA_REALIZADA_HTML.KNOW_MORE' | translate }}
+              </ion-segment-button>
+              <ion-segment-button class="btn-segment__evaluar" layout="icon-end" type="button" color="primary"
+                (click)="evaluateEvent(encuesta.id)"
+                *ngIf="encuesta.id && encuesta.EncuestaUserFinalizada.length && !encuesta.EncuestaUserFinalizada[0].finalizada">
+                <ion-icon name="podium"></ion-icon>
+                {{ 'ENCUESTA_REALIZADA_HTML.COMPLETE_SURVEY' | translate }}
+              </ion-segment-button>
+              <ion-segment-button class="btn-segment__evaluar" layout="icon-end" type="button" color="primary"
+                (click)="showResultsEvent(encuesta.id)"
+                *ngIf="encuesta.id && encuesta.EncuestaUserFinalizada.length && encuesta.EncuestaUserFinalizada[0].finalizada">
+                <ion-icon name="podium"></ion-icon>
+                {{ 'ENCUESTA_REALIZADA_HTML.SHOW_RESULTS' | translate }}
+              </ion-segment-button>
+            </ion-segment>
+          </ion-card-content>
+
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-infinite-scroll (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles"
+      loadingText="{{ 'ENCUESTA_REALIZADA_HTML.LOAD_MORE_SURVEYS' | translate }}">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

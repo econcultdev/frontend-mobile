@@ -1,0 +1,51 @@
+.row-lottie {
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 auto;
+}
+
+.row-lottie > div > canvas {
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 300px) {
+    .row-lottie > div > canvas {
+        width: 65% !important;
+        height: 65% !important;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 400px) {
+    .row-lottie > div > canvas {
+        width: 70% !important;
+        height: 70% !important;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 620px) {
+    .row-lottie > div > canvas {
+        width: 50% !important;
+        height: 50% !important;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 720px) {
+    .row-lottie > div > canvas {
+        width: 60% !important;
+        height: 60% !important;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 1020px) {
+    .row-lottie > div > canvas {
+        width: 60% !important;
+        height: 60% !important;
+        margin: 0 auto;
+    }
+}

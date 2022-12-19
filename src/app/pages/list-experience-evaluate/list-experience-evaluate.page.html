@@ -1,0 +1,56 @@
+<app-header [verifylogin]="verifylogin"></app-header>
+<ion-content class="container_body">
+  <ion-row class="title-page">
+    <h3>{{ 'LIST_EXPERIENCE_EVALUATE_HTML.PAGE_TITLE' | translate }}</h3>
+  </ion-row>
+  <div class="container-web-center background-primary">
+    <div class="width-app">
+      <div *ngIf="!experienceEvaluate.length" class="menssage_content_not_found">
+        <h5>{{ 'LIST_EXPERIENCE_EVALUATE_HTML.CONTENT_NOT_FOUND' | translate }}</h5>
+      </div>
+      <ion-list class="background-primary" *ngFor="let item of experienceEvaluate">
+        <ion-card class="container-fluid">
+          <div class="container-img">
+            <div class="imagenfull" [ngStyle]="{'background-image': 'url(' + item.Eventos.imagen + ')'}"></div>
+          </div>
+          <div class="container-detail">
+            <ion-card-title class="title-item">{{changeAttributesByLanguage(item.Eventos.nombre,
+              item.Eventos.nombre_multi)}}</ion-card-title>
+            <ion-card-subtitle class="subtitle-item">{{ 'LIST_EXPERIENCE_EVALUATE_HTML.SUBTITLE_SCHEDULE' | translate }}
+            </ion-card-subtitle>
+            <div *ngIf="!item.Eventos.permanente">
+              <ion-list *ngFor="let itemschedule of item.EventoHorario">
+                <ion-radio-group value="itemschedule.checked" allow-empty-selection="false">
+                  <ion-item class="item-event" (ionSelect)="onClickEvaluateEvent(itemschedule.id)">
+                    <ion-label>{{itemschedule.nombre}}</ion-label>
+                  </ion-item>
+                </ion-radio-group>
+              </ion-list>
+            </div>
+
+
+            <div *ngIf="item.Eventos.permanente"  class="group-search-explore">
+              <div class="color-primary group-field" (click)="picker.open()">
+                <div class="bc-primary group-icon">
+                  <ion-icon name="calendar" class="icon-field"></ion-icon>
+                </div>
+                <mat-datepicker #picker></mat-datepicker>
+                <input style="background-color:white;" [(ngModel)]="date_EvaluateEvent" readonly=»readonly»
+                  [min]="minDate" [max]="maxDate" [matDatepicker]="picker" (ngModelChange)="changeDate($event)"
+                  class="select-text" matInput>
+                <div class="bc-primary group-icon">
+                  <ion-icon name="chevron-down-outline" class="icon-field" style="zoom:1.5;"></ion-icon>
+                </div>
+              </div>
+              <div class="button-web " (click)="evaluateEvent(item.id)"> {{
+                'EVENT_DETAIL_HTML.EVALUATION_BUTTON' | translate }}</div>
+            </div>
+
+          </div>
+        </ion-card>
+      </ion-list>
+    </div>
+  </div>
+
+
+</ion-content>

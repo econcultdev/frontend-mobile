@@ -1,0 +1,74 @@
+<app-header></app-header>
+
+<ion-content *ngIf="loaded">
+  <form [formGroup]="datosPersonalesForm" (ngSubmit)="onFormSubmit(datosPersonalesForm.value)">
+    <ion-list>
+      <ion-item>
+        <h2>{{ 'DATOS_PERSONALES_HTML.PERSONAL_DATA' | translate }}</h2>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          {{ 'DATOS_PERSONALES_HTML.BIRTHDATE' | translate }}
+        </ion-label>
+        <ion-datetime #datePicker displayFormat="DD-MM-YYYY" cancelText="Cancelar" doneText="Hecho"
+          name="fechaNacimiento" [(ngModel)]="fechaNacimiento" formControlName="fechaNacimiento" [min]="minDate"
+          [max]="maxDate" placeholder="{{ 'DATOS_PERSONALES_HTML.SELECT_BIRTHDATE' | translate }}"></ion-datetime>
+      </ion-item>
+      <ion-item lines="none"></ion-item>
+      <ion-item>
+        <ion-label>
+          {{ 'DATOS_PERSONALES_HTML.GENDER' | translate }}: </ion-label>
+        <ion-select value="M" okText="{{ 'DATOS_PERSONALES_HTML.OK' | translate }}"
+          cancelText="{{ 'DATOS_PERSONALES_HTML.CANCEL' | translate }}" [(ngModel)]="sexo" formControlName="sexo">
+          <ion-select-option value="H">
+            {{ 'DATOS_PERSONALES_HTML.MAN' | translate }}
+          </ion-select-option>
+          <ion-select-option value="M">
+            {{ 'DATOS_PERSONALES_HTML.WOMAN' | translate }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <!--ion-item lines="none"></ion-item>
+      <ion-item style="overflow: visible;">
+        <ion-label>
+          {{ 'DATOS_PERSONALES_HTML.COUNTRY' | translate }}
+        </ion-label>
+        <ion-select placeholder="Select {{ 'DATOS_PERSONALES_HTML.COUNTRY' | translate }}"
+          (ionChange)="changeCountrySelected($event)" formControlName="pais">
+          <ion-select-option *ngFor="let country of countries" [value]="country">
+            {{changeAttributesByLanguage(country.nombre, country.nombre_multi)}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item lines="none"></ion-item>
+      <ion-item style="overflow: visible;" disabled="{{provincesCountry.length < 1}}">
+        <ion-label>
+          {{ 'DATOS_PERSONALES_HTML.PROVINCE' | translate }}
+        </ion-label>
+        <ion-select placeholder="Select {{ 'DATOS_PERSONALES_HTML.PROVINCE' | translate }}"
+          (ionChange)="changeProvinceSelected($event)" formControlName="provincia">
+          <ion-select-option *ngFor="let province of provincesCountry" [value]="province">
+            {{changeAttributesByLanguage(province.nombre, province.nombre_multi)}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item lines="none"></ion-item>
+      <ion-item style="overflow: visible;" disabled="{{citiesProvince.length < 1}}">
+        <ion-label>
+          {{ 'DATOS_PERSONALES_HTML.CITY' | translate }}
+        </ion-label>
+        <ion-select placeholder="Select {{ 'DATOS_PERSONALES_HTML.CITY' | translate }}"
+          (ionChange)="changeCitySelected($event)" formControlName="ciudad">
+          <ion-select-option *ngFor="let city of citiesProvince" [value]="city">
+            {{changeAttributesByLanguage(city.nombre, city.nombre_multi)}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item-->
+      <ion-item lines="none"></ion-item>
+      <ion-item lines="none">
+        <ion-button type="submit" [disabled]="!datosPersonalesForm.valid">
+          {{ 'DATOS_PERSONALES_HTML.CONTINUE' | translate }}</ion-button>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>

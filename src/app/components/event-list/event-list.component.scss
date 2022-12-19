@@ -1,0 +1,21 @@
+.experience-card {
+    min-height: 150px;
+    padding: 0;
+    margin: 0.5em 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.experience-card .image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0; bottom: 0;
+}
+
+.list-md {
+    padding: 0;
+}

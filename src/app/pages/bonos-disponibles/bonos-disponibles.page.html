@@ -1,0 +1,67 @@
+<app-header></app-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="auto">
+        <ion-title class="titulo-principal">
+          <h1>
+            {{ 'BONOS_DISPONIBLES_HTML.BONUSES_TITLE' | translate }}
+          </h1>
+        </ion-title>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card class="bono-card-sml ion-no-margin">
+          <ion-card-content class="bono-card-sml__content">
+            <ion-card-title class="bono-card-sml__title ion-padding-bottom">
+              {{ 'BONOS_DISPONIBLES_HTML.DELESTE_FESTIVAL' | translate }}
+            </ion-card-title>
+            <ion-card-subtitle class="bono-card-sml__subtitle ion-padding-bottom">
+              {{ 'BONOS_DISPONIBLES_HTML.DISCOUNT' | translate }}
+            </ion-card-subtitle>
+            <ion-chip>
+              <ion-icon name="time"></ion-icon>
+              <ion-label>
+                {{ 'BONOS_DISPONIBLES_HTML.DATE' | translate }}
+              </ion-label>
+            </ion-chip>
+
+          </ion-card-content>
+          <ion-button expand="full" class="btn btn-icon" size="large">
+            <ion-icon name="qr-scanner" size="small" slot="start"></ion-icon>
+            {{ 'BONOS_DISPONIBLES_HTML.SHOW_QR' | translate }}
+          </ion-button>
+        </ion-card>
+      </ion-col>
+      <!-- Fin bloque replicable -->
+      <ion-col size="6">
+        <ion-card class="bono-card-sml ion-no-margin">
+          <ion-card-content class="bono-card-sml__content">
+            <ion-card-title class="bono-card-sml__title ion-padding-bottom">
+              {{ 'BONOS_DISPONIBLES_HTML.DELESTE_FESTIVAL' | translate }}
+            </ion-card-title>
+            <ion-card-subtitle class="bono-card-sml__subtitle ion-padding-bottom">
+              {{ 'BONOS_DISPONIBLES_HTML.DISCOUNT' | translate }}
+            </ion-card-subtitle>
+            <ion-chip>
+              <ion-icon name="time"></ion-icon>
+              <ion-label>
+                {{ 'BONOS_DISPONIBLES_HTML.DATE' | translate }}
+              </ion-label>
+            </ion-chip>
+
+          </ion-card-content>
+          <ion-button expand="full" class="btn btn-icon" size="large">
+            <ion-icon name="qr-scanner" size="small" slot="start"></ion-icon>
+            {{ 'BONOS_DISPONIBLES_HTML.SHOW_QR' | translate }}
+          </ion-button>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6"></ion-col>
+      <ion-col size="6"></ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -1,0 +1,86 @@
+<app-header></app-header>
+<ion-content>
+  <ion-title class="header-bar-texto titulo-principal ion-text-center ion-padding-top ion-padding-bottom"
+    [ngStyle]="{height: evento ? '18%' : '100%'}">
+    <h1>
+      {{ 'DASHBOARD_HTML.HELLO' | translate }}
+      <ion-text color="primary" style="padding: 0px 0px 0px 10px;">
+        {{name}}
+      </ion-text>
+    </h1>
+    <h4>
+      {{ 'DASHBOARD_HTML.YOU_WANT_TO_DO' | translate }}
+    </h4>
+  </ion-title>
+
+  <div class="header-bar__titulo-sml-overlay" *ngIf="evento">
+    <div class="header-bar__titulo-sml-overlay-texto">
+      {{ 'DASHBOARD_HTML.RECOMENDATIONS' | translate }}
+    </div>
+  </div>
+
+  <div class="event-list">
+    <ion-card class="evento-card-sml" *ngIf="evento">
+      <ng-container *ngIf="evento.imagen">
+        <img [attr.src]="evento.imagen | secure | async" alt="">
+      </ng-container>
+      <ion-card-header>
+        <ion-card-subtitle>
+          <div class="ion-text evento-card-lrg__detalles">
+            <div class="evento-card-lrg__categoria-ubicacion">
+              <ion-text color="primary">
+                {{changeAttributesByLanguage(evento.TipoEvento.nombre, evento.TipoEvento.nombre_multi)}}
+              </ion-text> / <ion-text color="dark" *ngIf="evento.direccion">
+                {{changeAttributesByLanguage(evento.direccion, evento.direccion_multi)}}
+              </ion-text>
+            </div>
+            <div class="evento-card-lrg__fecha">
+              <ion-text color="dark">{{evento.fecha_inicio | date:'d/M/yyyy'}} - {{evento.fecha_fin | date:'d/M/yyyy'}}
+              </ion-text>
+            </div>
+          </div>
+        </ion-card-subtitle>
+        <ion-card-title>
+          <ion-text color="primary">
+            <h2>
+              {{changeAttributesByLanguage(evento.nombre, evento.nombre_multi)}}
+            </h2>
+          </ion-text>
+          <ion-text color="dark" *ngIf="evento.participantes">{{evento.participantes}}</ion-text>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="evento-card-lrg__texto">
+        <ion-text color="dark" class="ion-padding-bottom">
+          <p>{{changeAttributesByLanguage(evento.resumen, evento.resumen_multi)}}</p>
+        </ion-text>
+
+      </ion-card-content>
+      <ion-segment class="btn-segment" *ngIf="evento.link_externo">
+        <ion-segment-button class="btn-segment__bono" layout="icon-start" color="dark"
+          (click)="openUrl(evento.link_externo)" title="Ir a {{evento.link_externo}}">
+          <ion-icon name="information-circle-outline"></ion-icon>
+          {{ 'DASHBOARD_HTML.SHOW_MORE' | translate }}
+        </ion-segment-button>
+      </ion-segment>
+    </ion-card>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-segment class="btn-segment">
+    <ion-segment-button class="btn-segment__bono" layout="icon-start" type="button" color="dark"
+      (click)="consumeBonus()">
+      <div class="btn-segment__icono">
+        <img src="assets/ico-bono.svg" alt="">
+      </div>
+      {{ 'DASHBOARD_HTML.BONUSES_USE' | translate }}
+    </ion-segment-button>
+    <ion-segment-button class="btn-segment__evaluar" layout="icon-end" type="button" color="primary"
+      (click)="evaluateEvent()">
+      <ion-icon name="star"></ion-icon>
+      <div class="btn-segment__text">
+        {{ 'DASHBOARD_HTML.EVALUATE' | translate }}
+      </div>
+    </ion-segment-button>
+  </ion-segment>
+</ion-footer>

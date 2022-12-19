@@ -1,0 +1,157 @@
+<app-header></app-header>
+
+<ion-content>
+  <ng-container *ngIf="loaded">
+    <ion-grid>
+      <ng-container *ngIf="loaded && showCompare">
+        <ion-row>
+          <ion-col size="12" class="ion-text-center">
+            <div class="titulo-principal ion-text-center">
+              <h1 *ngIf="encuesta && encuesta.Eventos">{{encuesta.Eventos.nombre}}</h1>
+              <h3 *ngIf="encuesta">{{ 'RESULTADOS_ENCUESTA_HTML.SURVEY_RESULTS' | translate }}</h3>
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="ion-justify-content-center">
+          <ion-col size="auto">
+            <div class="resultado-encuesta__grafico" id="divBarChart" #divBarChart></div>
+          </ion-col>
+        </ion-row>
+
+
+        <div class="container-details">
+          <div class="width-app background-white">
+            <ion-row class=" ion-justify-content-center"
+              *ngIf="encuesta && loaded && preguntasContador.length > 0 && showCompare">
+              <ion-col size="auto">
+                <ion-list class="resultado-encuesta__filtros resultados__lista">
+                  <ion-item class="resultado-encuesta__filtro-item-uno">
+                    <ion-checkbox color="dark" slot="start" [(ngModel)]="labels['user'].isChecked"
+                      (click)="stopPropagationEvent($event)" (ionChange)="reCreateSvg()"></ion-checkbox>
+                    <ion-label>{{labels['user'].title}}</ion-label>
+                  </ion-item>
+                  <ion-item class="resultado-encuesta__filtro-item-dos">
+                    <ion-checkbox color="dark" slot="start" [(ngModel)]="labels['global'].isChecked"
+                      (click)="stopPropagationEvent($event)" (ionChange)="reCreateSvg()"></ion-checkbox>
+                    <ion-label>{{labels['global'].title}}</ion-label>
+                  </ion-item>
+                  <ion-item class="resultado-encuesta__filtro-item-tres">
+                    <ion-checkbox color="dark" slot="start" [(ngModel)]="labels['sexo'].isChecked"
+                      (click)="stopPropagationEvent($event)" (ionChange)="reCreateSvg()"></ion-checkbox>
+                    <ion-label>{{labels['sexo'].title}}</ion-label>
+                  </ion-item>
+                  <ion-item class="resultado-encuesta__filtro-item-cuatro">
+                    <ion-checkbox color="dark" checked slot="start" [(ngModel)]="labels['cultotipo'].isChecked"
+                      (click)="stopPropagationEvent($event)" (ionChange)="reCreateSvg()"></ion-checkbox>
+                    <ion-label>{{labels['cultotipo'].title}}</ion-label>
+                  </ion-item>
+                  <ion-item class="resultado-encuesta__filtro-item-cinco">
+                    <ion-checkbox color="dark" slot="start" [(ngModel)]="labels['edad'].isChecked"
+                      (click)="stopPropagationEvent($event)" (ionChange)="reCreateSvg()"></ion-checkbox>
+                    <ion-label>{{labels['edad'].title}}</ion-label>
+                  </ion-item>
+                </ion-list>
+              </ion-col>
+            </ion-row>
+
+            <ion-row class="ion-justify-content-center">
+              <ion-col size="auto">
+                <ion-button *ngIf="encuesta && loaded && encuesta.preguntas && encuesta.preguntas !== null "
+                  (click)="toggle()" icon-only tooltip="Lista de resultados">
+                  <ion-icon name="list"></ion-icon>
+                </ion-button>
+              </ion-col>
+            </ion-row>
+
+
+            <div [@popOverState]="stateName" *ngIf="encuesta && loaded && encuesta.preguntas">
+              <ion-row class="ion-justify-content-center ion-text-center">
+                <ion-col size="auto">
+                  <ion-title>{{ 'RESULTADOS_ENCUESTA_HTML.SURVEY_RESULTS_GLOBAL' | translate }}</ion-title>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col size="12">
+                  <div>
+                    <div *ngFor="let pregunta of encuesta.preguntas">
+                      <ion-list class="resultados__lista">
+                        <ion-list-header>
+                          <h5>
+                            {{changeAttributesByLanguage(pregunta.pregunta, pregunta.pregunta_multi)}}
+                          </h5>
+                        </ion-list-header>
+                        <ion-item *ngIf="!dataset[pregunta.id] && !respuestas[pregunta.id]">
+                          <p>{{ 'RESULTADOS_ENCUESTA_HTML.NOT_ANSWERED' | translate }}</p>
+                        </ion-item>
+                        <ion-item *ngIf="!dataset[pregunta.id] && respuestas[pregunta.id]">
+                          <p>{{respuestas[pregunta.id].valor}}</p>
+                        </ion-item>
+                        <ng-container *ngIf="dataset[pregunta.id]">
+                          <ng-container *ngFor="let etiqueta of dataset[pregunta.id]">
+                            <ion-item *ngIf="showCompare || (etiqueta.label === 'user')">
+                              <ng-container *ngIf="etiqueta.label === 'user'">
+                                <p>{{labels.user.title}}: {{etiqueta.valor.toFixed(2)}}</p>
+                              </ng-container>
+                              <ng-container *ngIf="etiqueta.label === 'global'">
+                                <p>{{labels.global.title}}: {{etiqueta.valor.toFixed(2)}}</p>
+                              </ng-container>
+                              <ng-container *ngIf="etiqueta.label === 'sexo'">
+                                <p>{{labels.sexo.title}}: {{etiqueta.valor.toFixed(2)}}</p>
+                              </ng-container>
+                              <ng-container *ngIf="etiqueta.label === 'cultotipo'">
+                                <p>{{labels.cultotipo.title}}: {{etiqueta.valor.toFixed(2)}}</p>
+                              </ng-container>
+                              <ng-container *ngIf="etiqueta.label === 'edad'">
+                                <p>{{labels.edad.title}}: {{etiqueta.valor.toFixed(2)}}</p>
+                              </ng-container>
+                            </ion-item>
+                          </ng-container>
+                        </ng-container>
+                      </ion-list>
+                    </div>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </div>
+
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-container class="ion-justify-content-center ion-text-center" *ngIf="loaded && !showCompare">
+
+        <ion-row style="margin: 0 auto;">
+          <ion-col size="12" class="ion-text-center">
+            <div class="titulo-principal ion-text-center">
+              <h1 *ngIf="encuesta && encuesta.Eventos">{{encuesta.Eventos.nombre}}</h1>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="row-lottie" style="margin: 0 auto;">
+          <ng-lottie [options]="lottieOptionsReturnLater" containerClass="lottie-wrapper">
+          </ng-lottie>
+        </ion-row>
+        <ion-row class="ion-justify-content-center ion-text-center" style="margin: 0 auto;">
+          <ion-col size="12" class="ion-text-center">
+            <div class="titulo-principal ion-text-center">
+              <h3 *ngIf="encuesta">{{ 'RESULTADOS_ENCUESTA_HTML.RETURN_LATER' | translate }}</h3>
+            </div>
+          </ion-col>
+        </ion-row>
+
+      </ng-container>
+    </ion-grid>
+  </ng-container>
+
+  <ng-container *ngIf="!loaded">
+    <ng-container class="row-lottie" class="ion-justify-content-center ion-text-center">
+      <ion-row style="margin: 0 auto; display: inherit;">
+        <ng-lottie [options]="lottieOptionsSearch"> </ng-lottie>
+      </ion-row>
+    </ng-container>
+  </ng-container>
+
+
+</ion-content>

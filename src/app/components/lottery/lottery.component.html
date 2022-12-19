@@ -1,0 +1,33 @@
+<ion-content>
+
+  <ion-grid>
+    <ion-row style="margin: 0 auto;">
+      <app-lottie-animation-view #animation class="row-lottie" [options]="lottieConfig"
+        (animCreated)="animationCreated($event)"></app-lottie-animation-view>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center ion-text-center" style="margin: 0 auto;">
+      <ion-col size="12" class="ion-text-center">
+        <div class="titulo-principal ion-text-center">
+          <h5>{{ 'LOTTERY_HTML.ONE_MORE_THING' | translate }}</h5>
+        </div>
+        <div class="titulo-principal ion-text-center">
+          <h3>{{ 'LOTTERY_HTML.TAKE_PERSONAL_SURVEY' | translate }}</h3>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="auto">
+        <ion-button class="btn" size="medium" (click)="onClickOk()">
+          {{ 'BIENVENIDA_HTML.ASK_ME' | translate }}
+        </ion-button>
+      </ion-col>
+      <ion-col size="auto">
+        <ion-button class="btn" size="medium" (click)="onClickNOk()">
+          {{ 'BIENVENIDA_HTML.OTHERWISE' | translate }}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

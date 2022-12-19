@@ -1,0 +1,56 @@
+.category-swipe {
+    width: auto;
+  }
+  
+  .category-swipe .swiper-slide {
+    width: 83px !important;
+  }
+  
+  .button-type-category {
+    padding: 0;
+    border: 1px solid;
+    height: 5.2em;
+    width: 5.2em;
+    border-radius: 0.25rem;
+    text-align: center;
+    background-color: var(--ion-color-primary);
+    color: white;
+    --padding-start: 0;
+    --padding-end: 0;
+    text-transform: capitalize;
+  }
+
+  .button-type-category:hover {
+    background-color: var(--ion-color-primary-background);
+    transform:scale(1.05);
+  }
+
+  .button-type-category{
+    background: var(--ion-color-primary-background-header);
+  }
+  
+  .button-type-category .category-icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    overflow: hidden;
+    width: 100%;
+    padding: 0.5em;
+  }
+  
+  .button-type-category .category-icon {
+    height: 2.1em;
+    width: 2.1em;
+    margin-bottom: 1em;
+  }
+  
+  .button-type-category .category-name {
+    font-size: 0.7em;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  

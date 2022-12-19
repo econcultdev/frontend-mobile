@@ -1,0 +1,21 @@
+.toolbar-header {
+  background-color: transparent;
+  width: 100vmax;
+  margin-left: -3.9px;
+  margin-top: -2.8px;
+}
+
+.btnBackArrow {
+  //margin: -10px;
+  width: 68px;
+  border-bottom-right-radius: 20px;
+  height: 66px;
+  background-color: #3ED6C0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-arrow-back {
+  font-size: 35px;
+  color: var(color-primary);
+}

@@ -1,0 +1,100 @@
+
+
+<ion-content *ngIf="loaded" class="width-app">
+  
+  <ion-row class="ion-justify-content-left">
+    <ion-row class="ion-justify-content-left">
+      <app-button-back-arrow></app-button-back-arrow>
+    </ion-row>
+  </ion-row>
+  <ion-row class="ion-justify-content-center">
+    <h4 class="title-page">{{ 'LOGIN_HTML.TITLE_MESSAGE_WELCOME' | translate }}</h4>
+  </ion-row>
+  <ion-grid >
+    
+    <div class="login-section__login-form">
+      <form [formGroup]="loginForm" (ngSubmit)="onFormSubmit(loginForm.value)">
+        <div class="login-section__bg">
+          <ion-row class="ion-justify-content-center mb-4">
+            <ion-row class="ion-justify-content-center">
+              <div class="login-section__login-img"></div>
+            </ion-row>
+          </ion-row>
+          <ion-row class="ion-justify-content-center">
+            <div class="form-group mb-4">
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">
+                  <span class="fas ">
+                    <ion-icon name="mail" slot="end"></ion-icon>
+                  </span>
+                  <ion-input type="text" formControlName="username" [(ngModel)]="username"></ion-input>
+                </span>
+              </div>
+            </div>
+          </ion-row>
+          <ion-row class="ion-justify-content-center">
+            <div class="form-group mb-4">
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">
+                  <span class="fas ">
+                    <ion-icon name="lock-open-outline" slot="end"></ion-icon>
+                  </span>
+                  <ion-input [type]="showPassword ? 'text' : 'password'" formControlName="password"
+                    [(ngModel)]="password"></ion-input>
+                  <span>
+                    <ng-container *ngIf="!showPassword">
+                      <ion-button size="medium" (click)="changeVisibilityPassword()" class="btn2" color="transparent">
+                        <ion-icon name="eye-off" slot="end" class="icon-eye"></ion-icon>
+                      </ion-button>
+                    </ng-container>
+                    <ng-container *ngIf="showPassword">
+                      <ion-button size="medium" class="btn2" (click)="changeVisibilityPassword()" color="transparent">
+                        <ion-icon name="eye" slot="end" class="icon-eye"></ion-icon>
+                      </ion-button>
+                    </ng-container>
+                  </span>
+                </span>
+                <div class="password_forgot" (click)="modifyPassword()">
+                  {{ 'LOGIN_HTML.PASSWORD_CHANGE' | translate }}
+                </div>
+              </div>
+            </div>
+          </ion-row>
+          <ion-row class="ion-justify-content-center">
+            <ion-row class="ion-justify-content-center">
+              <ion-item lines="none" class="login-section__btn-entrar-container">
+                <ion-button expand="full" class="login-section__btn-entrar btn" size="large" type="submit"
+                  (click)="onFormSubmit(loginForm.value)" [disabled]="!loginForm.valid"
+                  >{{ 'LOGIN_HTML.ENTER' | translate }}
+                </ion-button>
+              </ion-item>
+            </ion-row>
+          </ion-row>
+
+          <ion-row class="ion-justify-content-center">
+            <ion-row class="ion-justify-content-center">
+              <h4 >{{ 'LOGIN_HTML.OR' | translate }}</h4>
+            </ion-row>
+          </ion-row>
+
+
+          <ion-row class="ion-justify-content-center">
+            <ion-row class="ion-justify-content-center">
+              <button class="icongoogle" (click)="showAlertPrivacyData('google')"></button>
+              <ng-container *ngIf="showGoogleLoginButton">&nbsp;&nbsp;&nbsp;&nbsp;</ng-container>
+              <button class="iconfacebook quitar-por-ahora" (click)="showAlertPrivacyData('google')"> </button>
+              <ng-container *ngIf="showFacebookLoginButton"></ng-container>
+            </ion-row>
+          </ion-row>
+
+          <ion-row class="ion-justify-content-center" style="padding-top: 50px;   padding-bottom:25px">
+            <ion-row class="ion-justify-content-center" >
+              <div >{{ 'LOGIN_HTML.MESSAGE_NOT_HAVE_ACCOUNT' | translate }}</div>
+              <button (click)="showAlertPrivacyData('register')" class="button-action"> &nbsp; {{ 'LOGIN_HTML.MESSAGE_SIGN_UP' | translate }} </button>
+            </ion-row>
+          </ion-row>
+        </div>
+      </form>
+    </div>
+  </ion-grid>
+</ion-content>

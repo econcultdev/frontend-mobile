@@ -1,0 +1,43 @@
+.buttonHome {
+    //background-color:#f25c0515;
+    background-color: #41414113;
+    width: 138px;
+    height: 45px;
+    display: flex;
+    border-radius: 27px;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonHome.active {
+    background-color: #f25c0513;
+}
+.buttonSearch {
+    //background-color:#f25c0515;
+    background-color: var(--ion-color-primary);
+
+    width: 138px;
+    height: 45px;
+    display: flex;
+    border-radius: 27px;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonSearch.active {
+    background-color: #3ED6C0;
+}
+ion-tab-button {
+    --color-selected: #3ED6C0;
+    --background-focused: #0eec97e0;
+}
+
+@media (min-width: 950px) {
+    .menu-bottom{
+        display:none;
+    }
+}
+
+.quitar-por-ahora{
+    display:none;
+}

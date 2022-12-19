@@ -1,0 +1,420 @@
+{
+    "LANGUAGE": "English",
+    "ACTIVATION_HTML": {
+        "TITLE": "New user activation",
+        "NAME_USER": "User with name: {{username}} created. Press the button to activate it.",
+        "BUTTON_ACTIVE": "Activate",
+        "GO_TO_AUTH": "Go to autentication",
+        "NEW_TOKEN": "Generate New Token"
+    },
+    "ACTIVATION_TS": {
+        "PARAMETERS_ERROR": "Incorrect parameters",
+        "SERVER_ERROR": "Error communicating with the server",
+        "USER_NOT_FOUND": "User {{username}} was not found at the system. Contact the administrator if you have registered this user or create a new one.",
+        "TOKEN_NOT_FOUND": "No token found in the system for the user {{username}}. An email has been resent to {{email} with a new token.",
+        "EMAIL_NOT_SENT": "It has not been possible to send an email to {{email}}. Try to refresh the page. If it happens again, contact the administrator.",
+        "TOKEN_NOT_UPDATED": "The token could not be updated. Try to refresh the page. If it happens again, contact the administrator.",
+        "USER_NOT_ACTIVATED": "User could not be activated. Try to refresh the page. If it happens again, contact the administrator.",
+        "TOKEN_EXPIRED": "The token is not correct or it has expired (it has a validity of {{tokenTime}} s).<br />If you want to generate a new one, click on the link to have an email sent to you.",
+        "NEW_TOKEN": "New token created. Check your mail.",
+        "USER_EMPTY": "Empty user"
+    },
+    "LIST_EXPERIENCE_EVALUATE_HTML":{
+        "CONTENT_NOT_FOUND": "No evaluations available",
+        "PAGE_TITLE":"Experiences to evaluate",
+        "SUBTITLE_SCHEDULE":"When have you attended?"
+    },
+    "LOGIN_TS": {
+        "USER_NO_EXIST": "There is no user",
+        "PASSWORD_ERROR": "Incorrect pasword",
+        "TOKEN_CHECK_ERROR": "Error when verifying token",
+        "USER_NOT_ACCEPTED_PRIVACY_CONDITIONS": "The user has not accepted the privacy conditions",
+        "USER_NOT_ACTIVE": "The user is not activated",
+        "USER_NOT_EXIST": "The user does not exist",
+        "USER_NOT_SUPPLIED": "Please provide the user",
+        "SERVER_ERROR": "Error communicating with the server",
+        "USERNAME_REQUIRED": "You have to enter the user name",
+        "USERNAME_REQUIRED_PLEASE": "You have to enter the user name",
+        "USER_NOT_FOUND": "User {{username}} not found",
+        "EMAIL_SEND": "An email has been sent to {{email}}. Follow your instructions.",
+        "EMAIL_SEND_ERROR": "Error when sending the email to {{email}}. Please try again.",
+        "TOKEN_UPDATE_ERROR": "Internal error when updating the token. Please try again.",
+        "AGREE": "AGREE",
+        "NOT_AGREE": "NOT AGREE"
+    },
+    "LOGIN_HTML": {
+        "TITLE_MESSAGE_WELCOME":"Welcome Back!",
+        "USER_REMEMBER": "Remember user",
+        "ENTER": "Enter",
+        "PASSWORD_CHANGE": "Change password",
+        "I_AM_A_NEW_USER": "I am a new user",
+        "OR": "O",
+        "MESSAGE_NOT_HAVE_ACCOUNT": "Don’t have an account?",
+        "MESSAGE_SIGN_UP":"Sign up"
+    },
+    "MODIFY_PASSWORD_HTML": {
+        "TITLE": "AU Cultura",
+        "PASSWORD_MODIFY": "Password modification",
+        "GO_TO_AUTH": "Go to authentication",
+        "PASSWORD_REQUIRED_ERROR": "The password must meet the following criteria: minimum of 8 characters, maximum of 20 characters. It must include uppercase, lowercase, numbers and no spaces.",
+        "PASSWORD": "PASSWORD",
+        "PASSWORD_CONFIRMED": "CONFIRM PASSWORD",
+        "MODIFY": "Save",
+        "GENERATE_NEW_TOKEN": "Generate New Token"
+    },
+    "MODIFY_PASSWORD_TS": {
+        "PASSWORD_CONSISTENCE": "Password consistence:",
+        "PARAMETERS_ERROR": "Incorrect parameters",
+        "PASSWORD_MISSING": "Missing password or password confirmation",
+        "PASSWORD_CONSISTENCE_NOT_EQUALS": "Password confirmation is not the same as the password",
+        "PASSWORD_REQUIRED_ERROR": "The password must meet the following criteria: minimum of 8 characters, maximum of 20 characters. It has to include uppercase, lowercase, numbers and no spaces.",
+        "SERVER_ERROR": "Error communicating with the server",
+        "PASSWORD_CHANGED": "Changed password for the user {{username}.",
+        "USER_NOT_FOUND": "User {{username}} has not been found at the system. Please contact the administrator if you have registered this user or create a new one.",
+        "TOKEN_GENERATED": "Token generated. An email has been forwarded to {{email}} with a new token.",
+        "EMAIL_NOT_SENT": "An email could not be sent to {{email}}. Try to refresh the page. If it happens again, contact the administrator.",
+        "TOKEN_NOT_UPDATED": "The token could not be updated. Try to refresh the page. If it happens again, contact the administrator.",
+        "PASSWORD_NOT_UPDATED": "The password could not be updated. Try to refresh the page. If it happens again, contact the administrator.",
+        "TOKEN_EXPIRED": "The token is not correct or has expired (it has a validity of {{tokenTime}} s).<br />If you want to generate a new one, click on the link to receive an email.",
+        "NEW_TOKEN": "New token created. Check your mail."
+    },
+    "REGISTER_HTML": {
+        "TITLE": "User registration",
+        "NAME": "NAME",
+        "SURNAME": "SURNAME",
+        "EMAIL": "EMAIL",
+        "PASSWORD": "PASSWORD",
+        "PASSWORD_CONFIRMATION": "PASSWORD CONFIRMATION",
+        "PASSWORD_CONSISTENCE_NOT_EQUALS": "Password confirmation is not the same as the password",
+        "PASSWORD_REQUIRED_ERROR": "The password must meet the following criteria: minimum of 8 characters, maximum of 20 characters. It has to include uppercase, lowercase, numbers and no spaces.",
+        "PASSWORD_REQUIRED_MINIFY": "The password must meet the following criteria: minimum of 8 characters, maximum of 20 characters and no spaces.",
+        "LEGAL_PRIVACY_CONDITIONS": "I have read and accept the legal and privacy conditions",
+        "COMMERCIAL_CULTURAL_INTERESTS": "I agree to receive commercial information related to my cultural interests",
+        "SHARED_DATA": "I accept that my data is shared with cultural institutions",
+        "LEGAL_CONDITIONS": "Legal conditions",
+        "TO_REGISTER": "Register",
+        "TITLE_MESSAGE":"Register!",
+        "OR": "OR",
+        "MESSAGE_HAVE_ACCOUNT": "Have an account?",
+        "MESSAGE_LOG_IN":"Log In"
+    },
+    "REGISTER_TS": {
+        "CLOSE": "CLOSE",
+        "PASSWORD_CONSISTENCE": "Password consistence:",
+        "SERVER_ERROR": "Error when communicating with the server",
+        "INCORRECT_REGISTRATION": "Incorrect registration",
+        "PASSWORD_MISSING": "Missing password or password confirmation",
+        "PASSWORD_CONSISTENCE_NOT_EQUALS": "Password confirmation is not the same as the password",
+        "PASSWORD_REQUIRED_ERROR": "The password must meet the following criteria: minimum of 8 characters, maximum of 20 characters. It has to include uppercase, lowercase, numbers and no spaces."
+    },
+    "CONTROLMESSAGE_TS": {
+        "REQUIRED": "Required",
+        "INVALID_EMAIL_ADDRESS": "Invalid email adress",
+        "PASSWORD_REQUIRED_ERROR": "The password must meet the following criteria: minimum 8 characters, maximum 20 characters. It has to have uppercase, lowercase, numbers and no spaces.",
+        "MIN_LENGTH": "Minimum lenght"
+    },
+    "GOOGLE_LOGIN_HTML": {
+        "LOGIN": "Google login"
+    },
+    "GOOGLE_LOGIN_TS": {
+        "USER_NOT_EXIST": "User does not exist",
+        "PASSWORD_WRONG": "Wrong password",
+        "TOKEN_ERROR": "Error when verifying token",
+        "MIN_LENGTH": "Minimum lenght {{length}}",
+        "USER_NOT_ACCEPTED_PRIVACY_CONDITIONS": "The user has not accepted the privacy conditions",
+        "USER_NOT_ACTIVE": "The user is not activated",
+        "USER_EXIST_ERROR": "User does not exist",
+        "USER_PROVIDE": "Please provide the user",
+        "SERVER_ERROR": "Error communicating with the server",
+        "USER_NOT_VALID": "User not valid",
+        "GOOGLE_VALIDATION_ERROR": "Error when validating with Google"
+    },
+    "HEADER_TS": {
+        "SERVER_ERROR": "Error communicating with the server"
+    },
+    "TOKEN_INTERCEPTOR_TS": {
+        "AUTH_FAILED": "Failed authentication"
+    },
+    "BIENVENIDA_HTML": {
+        "WELCOME": "Welcome",
+        "KNOW_CULTOTIPO": "Do you want to know your Cultotype?",
+        "QUESTIONS_INFO_COMPLETE": "Complete the following questions and find out what kind of cultural consumer you are.",
+        "QUESTIONS_INFO_RECOMENDATION": "Also, getting to know you better will help us to recommend you events that fit your profile so you get the most out of our App",
+        "ASK_ME": "Of course, ask me",
+        "OTHERWISE": "Maybe some other time"
+    },
+    "BONOS_DISPONIBLES_HTML": {
+        "BONUSES_TITLE": "Your bonuses",
+        "DELESTE_FESTIVAL": "Deleste Festival",
+        "DISCOUNT": "10% of discount on the entrance",
+        "DATE": "28/11/2019",
+        "SHOW_QR": "Show QR",
+        "OTHERWISE": "Maybe some other time"
+    },
+    "CULTOTIPO_HTML": {
+        "YOU_ARE": "You're ",
+        "EDIT_PROFILE": "Edit your profile",
+        "GO_HOME": "Go home"
+    },
+    "CULTOTIPO_TS": {
+        "SERVER_ERROR": "Error communicating with the server"
+    },
+    "DASHBOARD_HTML": {
+        "HELLO": "Hello",
+        "YOU_WANT_TO_DO": "What do you want to do?",
+        "BONUSES_USE": "Use the bonuses",
+        "EVALUATE": "Evaluate",
+        "RECOMENDATIONS": "Today we recommend you",
+        "SHOW_MORE": "Show more"
+    },
+    "DASHBOARD_TS": {
+        "SERVER_ERROR": "Error communicating with the server"
+    },
+    "DATOS_PERSONALES_HTML": {
+        "PERSONAL_DATA": "Personal data",
+        "BIRTHDATE": "Birthdate",
+        "SELECT_BIRTHDATE": "Select birthday",
+        "OK": "Ok",
+        "CANCEL": "Cancel",
+        "GENDER": "Gender",
+        "MAN": "Man",
+        "WOMAN": "Woman",
+        "COUNTRY": "Country",
+        "PROVINCE": "Province",
+        "CITY": "City",
+        "CONTINUE": "CONTINUE"
+    },
+    "DATOS_PERSONALES_TS": {
+        "SERVER_ERROR": "Error communicating with the server",
+        "DATA_ERROR": "Data error",
+        "SELECT_COUNTRY": "Select country",
+        "SELECT_PROVINCE": "Select province",
+        "SELECT_CITY": "Select city"
+    },
+    "EDITAR_USUARIO_HTML": {
+        "NAME": "Name",
+        "SURNAME": "Surname",
+        "EMAIL": "Email",
+        "PASSWORD": "Password",
+        "PASSWORD_CONFIRMATION": "Password Confirmation",
+        "ACCEPT_COMERCIAL_INFO": "I accept to receive commercial information related to my cultural interests",
+        "ACCEPT_SHARED_DATA": "I accept that my data will be shared with cultural institutions",
+        "MODIFY": "Save",
+        "SELECT_COUNTRY": "Select country",
+        "COUNTRY": "Country",
+        "TITLE_MESSAGE": "Edit Profile",
+        "CULTOTYPE": "Cultotype",
+        "DISCOVER_CUTLTYPE":"Discover your cult type"
+
+    },
+    "EDITAR_USUARIO_TS": {
+        "PASSWORD_CONSISTENCE": "Password consistence:",
+        "USER_NOT_VALID": "Invalid user",
+        "SERVER_ERROR": "Error communicating with the server",
+        "MODIFICATION_ERROR": "Incorrect modification",
+        "PASSWORD_CONSISTENCE_NOT_EQUALS": "Password confirmation is not the same as the password",
+        "PASSWORD_REQUIRED_ERROR": "The password must meet the following criteria: minimum of 8 characters, maximum of 20 characters. It has to include uppercase, lowercase, numbers and no spaces.",
+        "MODIFIED_USER": "User modify"
+    },
+    "ENCUESTA_HTML": {
+        "ANSWER": "Answer",
+        "ANSWER_HERE": "Answer here...",
+        "ASK_IS_PUBLIC":"Do you want your review to be public?",
+        "YES": "Yes",
+        "NO": "No",
+        "ADVERTISEMENT": "Keep in mind that whatever answers these questions, it will not affect the pricing policy of the facility or institution in any way. We only intend to translate the level of satisfaction/well_being that the event has caused into monetary values.",
+        "RETURN_BACK": "You can leave the survey at any time and complete it later",
+        "SKIP": "Skip"
+    },
+    "ENCUESTA_TS": {
+        "AMOUNT_ENTER": "Enter an amount",
+        "SURVEY_NOT_AVAILABLE": "Survey not available",
+        "SURVEY_ERROR": "A survey has not been provided",
+        "SERVER_ERROR": "Error when communicating with the server",
+        "SURVEY_FINISH_ERROR": "Error at the end of the survey",
+        "RESPONSE_SAVE_ERROR": "Error when saving the survey",
+        "NO_IMPACT": "No impacto",
+        "MAXIMUM_IMPACT": "Maximum impact",
+        "NO_SATISFACTION": "Not at all satisfactory",
+        "MAXIMUM_SATISFACTION": "Highly satisfactory",
+        "STRONGLY_DISAGREE": "Strongly disagree",
+        "MAXIMUM_AGREE": "Strongly agree"
+    },
+    "ENCUESTA_PERSONAL_HTML": {
+        "RESPONSE": "Answer",
+        "INTRODUCE_NUMBER": "Enter number here...",
+        "LITTLE_BIT": "A little bit",
+        "A_LOT": "A lot"
+    },
+    "ENCUESTA_PERSONAL_TS": {
+        "NUMBER_INTRODUCE": "Enter figure here ...",
+        "SERVER_ERROR": "Error when communicating with the server",
+        "CULTOTIPO_ERROR": "Error when assigning Cultotype",
+        "SURVEY_WTHOUT_QUESTIONS": "Survey without questions",
+        "NO_QUESTIONS": "No questions",
+        "QUESTION_NOT_EXITS": "The question does not exist",
+        "NO_SATISFACTION": "Not at all satisfactory",
+        "MAXIMUM_SATISFACTION": "Highly satisfactory",
+        "STRONGLY_DISAGREE": "Strongly disagree",
+        "MAXIMUM_AGREE": "Strongly agree"
+    },
+    "ENCUESTA_REALIZADA_HTML": {
+        "SURVEY_COMPLETED": "Survey completed",
+        "SURVEY_TO_BE_COMPLETED": "Survey to be completed",
+        "SHOW_GLOBAL_RESULTS": "SHOW GLOBAL RESULTS",
+        "KNOW_MORE": "Know more",
+        "COMPLETE_SURVEY": "Complete the survey",
+        "SHOW_RESULTS": "Show results",
+        "LOAD_MORE_SURVEYS": "Loading more surveys..."
+    },
+    "ENCUESTA_REALIZADA_TS": {
+        "SERVER_ERROR": "Error when communicating with the server"
+    },
+    "EVENTOS_DESTACADOS_HTML": {
+        "FIND_YOUR_EVENT": "Find your event",
+        "KNOW_MORE": "Know more",
+        "EVALUATE": "Evaluate",
+        "LOAD_MORE_EVENTS": "Load more events..."
+    },
+    "EVENTOS_DESTACADOS_TS": {
+        "SERVER_ERROR": "Error when communicating with the server"
+    },
+    "EVENT_DETAIL_HTML": {
+        "EVENT_FREE": "Free",
+        "BUY_BUTTON": "Buy tickets",
+        "EVALUATION_BUTTON": "Evaluate",
+        "SAVE_BUTTON": "Save",
+        "TITLE_HIDDEN_BUTTON_COMMENT": "Hide",
+        "TITLE_SECTION_DETAIL":"Detail",
+        "TITLE_SECTION_MAP":"Map",
+        "TITLE_SECTION_SCHEDULE":"Schedule",
+        "TITLE_SECTION_OPINIONS":"Opinions",
+        "TITLE_SECTION_HOW_TO_GET":"How to get"
+    },
+    "EVENT_HOME_HTML": {
+        "TYPE_CATEGORY": "Category",
+        "TITLE_MESSAGE_BANNER1": "Find new experiences ",
+        "TITLE_MESSAGE_BANNER2": " and share your opinion!",
+        "TITLE_NUMBER_EVENT": "Experiences"
+    },
+    "EVENT_SEARCH_HTML": {
+        "BUTTON_TODAY_MESSAGE": "Today",
+        "BUTTON_THIS_WEEK_MESSAGE": "This week",
+        "BUTTON_NEXT_WEEK_MESSAGE": "Next week",
+        "TITLE_EVENT_DESTACADOS_PLUS":"Featured Events",
+        "MESSAGE_NOT_RESULTS":"There are no published offers yet",
+        "TITLE_MESSAGE": "Explore your experience"
+    },
+    "FICHA_USUARIO_HTML": {
+        "EXIT_ACCOUNT": "Exit the account",
+        "CULTOTIPO_SURVEY": "Complete the personal survey to find out aboute your Cultotype.",
+        "SURVEY_TO_BE_COMPLETED": "Survey to be completed",
+        "FOR_COMPLETE_SURVEY": "Survey to be completed",
+        "COMPLETED_SURVEYS": "Completed surveys",
+        "SHOW_DETAILS": "Show details",
+        "BONUSES_CONSUMED": "Consumed bonuses",
+        "EDIT_PROFILE": "Edit your profile",
+        "MODIFY_PERSONAL_SURVEY": "Modify personal survey"
+    },
+    "FICHA_USUARIO_TS": {
+        "SERVER_ERROR": "Error when communicating with the server"
+    },
+    "HOME_HTML": {
+        "SELECT_CITIES": "Select City"
+    },
+    "QR_HTML": {
+        "SCAN_QR": "Scanning QR code",
+        "SCAN_QR_SURVEY": "Scan your QR code to go to a survey.",
+        "DEVICES": "Devices",
+        "DEVICES_SELECT": "Select one",
+        "SCAN": "Scanning",
+        "SCAN_CODE": "Scanned code"
+    },
+    "QR_TS": {
+        "NOT_SUPPORTED_DEVICES": "No video devices supported.",
+        "NO_DEVICES": "No video devices supported.",
+        "CATCHED_DEVICES_ERROR": "No devices could be picked up",
+        "LOAD_QR_DECODER_ERROR": "The QR decoder has not been loaded.",
+        "SCAN": "Scanning",
+        "SCAN_CODE": "Scanned code"
+    },
+    "PAGES_INFO_HTML": {
+        "PAGES_ABOUT_US": "About us",
+        "PAGES_EVENT_ORGANIZERS": "Event organizers",
+        "PAGES_COOKIES_POLICY": "Cookies policy",
+        "PAGES_LEGAL_WARNING": "Legal warning"
+    },
+    "RESULTADOS_ENCUESTA_HTML": {
+        "SURVEY_RESULTS": "Survey results",
+        "SURVEY_RESULTS_GLOBAL": "Global results",
+        "NOT_ANSWERED": "Not answered",
+        "RETURN_LATER": "Not enough surveys have been conducted yet for you to compare your results, come back later!"
+    },
+    "RESULTADOS_ENCUESTA_TS": {
+        "EVALUATION": "Your evaluation",
+        "GENERAL_EVALUATION": "General evaluation of the event",
+        "EVENT_GENDER_HALF": "Average of the event by your gender",
+        "EVENT_CULTOTIPO_HALF": "Average of the event by your Cultotype",
+        "EVENT_AGE_HALF": "Average of the event by your age",
+        "SERVER_ERROR": "Error when communicating with the server",
+        "SURVEY_NOT_ALLOWED": "A survey has not been provided"
+    },
+    "RESULTADO_BUSQUEDA_HTML": {
+        "EVENTS": "Events",
+        "KNOW_MORE": "Know more",
+        "EVALUATE": "Evaluate",
+        "LOAD_MORE_EVENTS": "Load more events...",
+        "EVENTS_NOT_FOUND": "Events not found"
+    },
+    "RESULTADO_BUSQUEDA_TS": {
+        "SERVER_ERROR": "Error when communicating with the server",
+        "SEARCH_NOT_ALLOWED": "No search term supplied"
+    },
+    "RESULTADO_GLOABALES_HTML": {
+        "EVALUATIONS": "Your evaluations",
+        "GLOBAL_RESULTS": "Global results"
+    },
+    "RESULTADO_GLOBALES_TS": {
+        "HALF": "Your average of",
+        "TOTAL_HALF": "Your total average",
+        "GLOBAL_TOTAL_HALF": "Overall total average",
+        "SERVER_ERROR": "Error communicating with the server"
+    },
+    "UTILS_SERVICE_TS": {
+        "PLEASE_WAIT": "Please wait..."
+    },
+    "SAVED_EVENTS_HTML": {
+        "CONTENT_NOT_FOUND": "There are no saved experiences yet!",
+        "PAGE_TITLE":"Saved experiences"
+    },
+    "SLIDER_START_HTML": {
+        "SLIDE_1": "Discover the cultural events in your city",
+        "SLIDE_2": "Evaluate cultural events and services",
+        "SLIDE_3": "Discover your cultural profile",
+        "READY": "Ready?",
+        "START": "Let us begin",
+        "NEXT": "Next"
+    },
+    "LOTTERY_HTML": {
+        "ONE_MORE_THING": "There is still one more step to be able to participate in the LOTTERY and discover your cultotype.",
+        "TAKE_PERSONAL_SURVEY": "Take the personal survey!"
+    },
+    
+    "FOOTER_LINKS": {
+        "ABOUT_US": "About us",
+        "EVENT_PLANNER": "Event planner",
+        "COOKIES_POLICY": "Cookies policy",
+        "LEGAL_NOTICE":"Legal notice"
+    },
+
+    "ENCUESTA_GLOBAL":{
+        "CUENTA_EVENTO": "Tell us about your latest cultural experience"
+    },
+
+    "MENU_TOP_LINKS":{
+        "CONFIGURATION": "Configuration",
+        "SAVED_EVENTS": "Saved events",
+        "YOUR_ACTIVITY": "Your activity",
+        "LOG_OUT": "Log out"
+    }
+}

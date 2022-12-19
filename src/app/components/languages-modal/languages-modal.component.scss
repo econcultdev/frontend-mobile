@@ -1,0 +1,24 @@
+.parent {
+    .child {
+        height: 20%;
+        top: 40%;
+        width: 75%;
+        left: 12.5%;
+        position: absolute;
+    }
+}
+
+ion-list {
+    margin-bottom: 10px !important;
+    ion-button {
+        --box-shadow: none;
+        ion-icon {
+            zoom: 1.5;
+            border-radius: 75%;
+        }
+        span.ion-text-left {
+            margin-right: auto;
+            padding: 0px 0px 0px 10px;
+        }
+    }
+}

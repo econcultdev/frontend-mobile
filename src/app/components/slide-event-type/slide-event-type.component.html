@@ -1,0 +1,13 @@
+<ion-row id="type_category_swipe" class="category-swipe">
+    <swiper [config]="config">
+        <ng-template swiperSlide *ngFor="let te of tipoeventos" style="width: 87px">
+            <ion-button color="white" (click)="changeTypeEvent(te.id)" class="color-primary button-type-category ">
+                <span class="category-icon-container">
+                    <img src="/assets/img/categories/{{te.id}}.svg" class="category-icon"
+                        alt="{{changeAttributesByLanguage(te.nombre, te.nombre_multi)}}">
+                    <span class="category-name">{{changeAttributesByLanguage(te.nombre, te.nombre_multi)}}</span>
+                </span>
+            </ion-button>
+        </ng-template>
+    </swiper>
+</ion-row>

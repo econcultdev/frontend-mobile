@@ -1,0 +1,138 @@
+<app-header [verifylogin]="verifylogin"></app-header>
+
+<ion-content *ngIf="loaded">
+
+  <div class="flex-row">
+    <ion-row class="btnBackArrow" (click)="navigateHome()">
+      <ion-icon name="arrow-back-outline" class="icon-arrow-back">
+      </ion-icon>
+    </ion-row>
+    <ion-row class="title-page">
+      <h3>{{ 'EDITAR_USUARIO_HTML.TITLE_MESSAGE' | translate }}</h3>
+    </ion-row>
+    <ion-row class="button-logout" (click)="logout()">
+      <ion-icon name="exit-outline" style="font-size: 35px; color: white"></ion-icon>
+    </ion-row>
+  </div>
+
+
+  <form class="form" [formGroup]="editUserForm" (ngSubmit)="onFormSubmit(editUserForm.value)">
+
+    <ion-row class="ion-justify-content-center">
+      <ion-segment-button class="btn-segment__evaluar" layout="icon-end" type="button" color="primary"
+        (click)="modEncuestaPersonal()">
+        {{ 'EDITAR_USUARIO_HTML.DISCOVER_CUTLTYPE' | translate }}
+      </ion-segment-button>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center">
+      <div class="container">
+        <div class="outer" id="imagenuser" [ngStyle]="{'background-image': 'url(' + photo + ')'}">
+          <div class="inner">
+            <input type="file" (change)="loadImageFromDevice($event)" name="btn-search-imagen" id="btn-search-imagen"
+              class="inputfile inputfile-5" />
+            <label for="btn-search-imagen">
+              <figure>
+                <ion-icon name="camera" class="iborrainputfile camera-icon"></ion-icon>
+              </figure>
+            </label>
+          </div>
+        </div>
+      </div>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center">
+      <div class="form-group mb-4">
+        <div class="input-group">
+          <ion-label class="label-registre" position="stacked">{{ 'EDITAR_USUARIO_HTML.NAME' | translate }}</ion-label>
+          <span class="input-group-text">
+            <span class="fas ">
+              <ion-icon name="" slot="end">
+              </ion-icon>
+            </span>
+            <ion-input type="text" formControlName="nombre" [(ngModel)]="nombre"></ion-input>
+          </span>
+        </div>
+      </div>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center">
+      <div class="form-group mb-4">
+        <div class="input-group">
+          <ion-label class="label-registre" position="stacked">{{ 'EDITAR_USUARIO_HTML.SURNAME' | translate }}
+          </ion-label>
+          <span class="input-group-text">
+            <span class="fas ">
+              <ion-icon name="" slot="end">
+              </ion-icon>
+            </span>
+            <ion-input type="text" formControlName="apellidos" [(ngModel)]="apellidos"></ion-input>
+          </span>
+        </div>
+      </div>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center">
+      <div class="form-group mb-4">
+        <div class="input-group">
+          <ion-label class="label-registre" position="stacked">{{ 'EDITAR_USUARIO_HTML.EMAIL' | translate }}</ion-label>
+          <span class="input-group-text">
+            <span class="fas ">
+              <ion-icon name="mail" style="padding-top:10px"></ion-icon>
+            </span>
+            <ion-input type="text" formControlName="email" [(ngModel)]="email"></ion-input>
+          </span>
+        </div>
+      </div>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center">
+      <div class="form-group mb-4">
+        <div class="input-group">
+          <ion-label class="label-registre" position="stacked">{{ 'EDITAR_USUARIO_HTML.COUNTRY' | translate }}
+          </ion-label>
+          <span class="input-group-text">
+            <span class="fas ">
+              <ion-icon name="" slot="end">
+              </ion-icon>
+            </span>
+            <ion-select (ionChange)="changeCountrySelected($event)" class="select-text"
+              placeholder="{{ 'EDITAR_USUARIO_HTML.SELECT_COUNTRY' | translate }}" [(ngModel)]="paisId"
+              formControlName="pais">
+              <ion-select-option selected="True" *ngFor="let country of countries" [value]="country.id">
+                {{changeAttributesByLanguage(country.nombre, country.nombre_multi)}}
+              </ion-select-option>
+            </ion-select>
+          </span>
+        </div>
+      </div>
+    </ion-row>
+
+    <!--ion-row  *ngIf="cultoTipo" class="ion-justify-content-center">
+      <div class="form-group mb-4">
+        <div class="input-group">
+          <ion-label class="label-registre" position="stacked">{{ 'EDITAR_USUARIO_HTML.CULTOTYPE' | translate }}</ion-label>
+          <span class="input-group-text">
+            <span class="fas ">
+              <ion-icon name="" slot="end">
+              </ion-icon>
+            </span>
+            <ng-container *ngIf="sexo !== 'M' || (sexo === 'M' && !cultoTipo.nombreH)">
+              <h5>{{titleWoman}}</h5>
+            </ng-container>
+            <ng-container *ngIf="sexo === 'M' && cultoTipo.nombreH">
+              <h5>{{titleMan}}</h5>
+            </ng-container>
+          </span>
+        </div>
+      </div>
+    </ion-row-->
+    
+    <br>
+    <ion-row class="ion-justify-content-center mt-4">
+      <ion-button class="btnback" type="submit"> {{ 'EDITAR_USUARIO_HTML.MODIFY'
+        | translate }}</ion-button>
+    </ion-row>
+  </form>
+  <app-footer></app-footer>
+</ion-content>

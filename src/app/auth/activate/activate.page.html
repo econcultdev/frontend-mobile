@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'ACTIVATION_HTML.TITLE' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center ion-padding-vertical activacion-usuario__form">
+      <ion-col size="12" class="ion-text-center">
+        {{ 'ACTIVATION_HTML.NAME_USER' | translate:{username: username} }}
+      </ion-col>
+      <ion-col size="6" class="ion-justify-content-center">
+        <ion-button expand="full" (click)="activar()">
+          {{ 'ACTIVATION_HTML.BUTTON_ACTIVE' | translate }}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-item lines="none">
+  </ion-item>
+  <ion-item lines="none">
+    <ion-button type="button" expand="full" size="small" fill="clear" (click)="goAuth()" class="button-black-text">
+      {{ 'ACTIVATION_HTML.GO_TO_AUTH' | translate }}</ion-button>
+  </ion-item>
+  <ion-item lines="none" *ngIf="linkRegenerate">
+    <ion-button type="button" expand="full" size="small" fill="clear" (click)="regenerate()" class="button-black-text">
+      {{ 'ACTIVATION_HTML.NEW_TOKEN' | translate }}
+    </ion-button>
+  </ion-item>
+
+</ion-content>

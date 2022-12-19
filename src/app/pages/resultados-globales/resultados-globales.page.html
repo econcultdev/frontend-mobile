@@ -1,0 +1,82 @@
+<app-header></app-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <div class="titulo-principal ion-text-center">
+          <h1>{{ 'RESULTADO_GLOABALES_HTML.EVALUATIONS' | translate }}</h1>
+          <h3>{{ 'RESULTADO_GLOABALES_HTML.GLOBAL_RESULTS' | translate }}</h3>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="auto">
+        <div class="resultado-encuesta__grafico" id="barChartGlobales"></div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center" *ngIf="dataset && loaded">
+      <ion-col size="12">
+        <ion-list class="resultado-encuesta__filtros resultados__lista">
+          <ion-item class="resultado-encuesta__filtro-item-1">
+            <ion-checkbox color="dark" slot="start" (ionChange)="reCreateSvg('user', $event.detail.checked)"
+              [(ngModel)]="labels['user'].isChecked" (click)="$event.stopPropagation()"></ion-checkbox>
+            <ion-label>{{labels['user'].title}}</ion-label>
+          </ion-item>
+          <ion-item class="resultado-encuesta__filtro-item-2">
+            <ion-checkbox color="dark" slot="start" [(ngModel)]="labels['global'].isChecked"
+              (ionChange)="reCreateSvg('global', $event.detail.checked)" (click)="$event.stopPropagation()">
+            </ion-checkbox>
+            <ion-label>{{labels['global'].title}}</ion-label>
+          </ion-item>
+          <ng-container *ngFor="let label of labelsHtml; index as i">
+            <ion-item [ngClass]="'resultado-encuesta__filtro-item-' + (i + 3)">
+              <ion-checkbox color="dark" slot="start" [(ngModel)]="label.isChecked"
+                (ionChange)="reCreateSvg(label, $event.detail.checked)" (click)="$event.stopPropagation()">
+              </ion-checkbox>
+              <ion-label>{{label.title}}</ion-label>
+            </ion-item>
+          </ng-container>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="auto">
+        <ion-button *ngIf="dataset && loaded" (click)="toggle()" icon-only tooltip="Lista de resultados">
+          <ion-icon name="list"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <div [@popOverState]="stateName" *ngIf="dataset && loaded">
+      <ion-row class="ion-justify-content-center ion-text-center">
+        <ion-col size="auto">
+          <ion-title>{{ 'RESULTADO_GLOABALES_HTML.GLOBAL_RESULTS' | translate }}</ion-title>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <div *ngIf="preguntas">
+            <div *ngFor="let pregunta of preguntas">
+              <ion-list class="resultados__lista">
+                <ion-list-header>
+                  <h5>
+                    {{pregunta.pregunta}}
+                  </h5>
+                </ion-list-header>
+                <ion-item *ngFor="let etiqueta of dataset[pregunta.id]">
+                  <p>{{labels[etiqueta.label].title}}: {{etiqueta.valor.toFixed(2)}}</p>
+                </ion-item>
+              </ion-list>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+
+  </ion-grid>
+</ion-content>

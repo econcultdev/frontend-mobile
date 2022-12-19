@@ -1,0 +1,46 @@
+<app-header></app-header>
+
+<ion-content *ngIf="loaded">
+  <ion-grid *ngIf="cultoTipo">
+
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <div class="titulo-principal">
+          <h3>{{ 'CULTOTIPO_HTML.YOU_ARE' | translate }}</h3>
+          <ng-container *ngIf="sexo !== 'M' || (sexo === 'M' && !cultoTipo.nombreH)">
+            <h1>{{titleWoman}}</h1>
+          </ng-container>
+          <ng-container *ngIf="sexo === 'M' && cultoTipo.nombreH">
+            <h1>{{titleMan}}</h1>
+          </ng-container>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="cultoTipo.imgUrl">
+      <ion-col size="12">
+        <img class="cultotipo__imagen" [attr.src]="cultoTipo.imgUrl | secure | async" alt="">
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="10" class="ion-padding">
+        <p>{{description}}</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center ion-padding-bottom">
+      <ion-col size="auto">
+        <ion-button class="btn-clear btn-edit-cultotipo" fill="clear" size="large" (click)="onClickVerPerfil()">
+          {{ 'CULTOTIPO_HTML.EDIT_PROFILE' | translate }}
+        </ion-button>
+      </ion-col>
+      <ion-col size="auto">
+        <ion-button class="btn btn-home-cultotipo" size="large" (click)="onClickGoHome()">
+          {{ 'CULTOTIPO_HTML.GO_HOME' | translate }}</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

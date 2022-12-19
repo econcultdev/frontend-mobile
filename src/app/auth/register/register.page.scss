@@ -1,0 +1,13 @@
+.registro__consentimiento {
+    margin-top: 20px;
+    padding-left: 10px;
+}
+
+::ng-deep .condiciones-legales-alert .alert-wrapper {
+    min-width: 60%;
+    min-height: 60%;
+}
+
+::ng-deep .condiciones-legales-alert .alert-message {
+    max-height: 100%;
+}

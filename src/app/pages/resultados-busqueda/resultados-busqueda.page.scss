@@ -1,0 +1,9 @@
+::ng-deep ion-thumbnail {
+    --size: 150px;
+}
+
+::ng-deep .title-ios.title-default {
+    padding-left: unset;
+    padding-right: unset;
+    padding-inline: 0px !important;
+}

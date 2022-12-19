@@ -1,0 +1,117 @@
+.ficha-usuario__header {
+}
+
+.ficha-usuario__username {
+    padding-left: 18px;
+    padding-top: 8px;
+}
+
+.ficha-usuario__imagen {
+    margin-right: 10px;
+    padding-bottom: 4px;
+    img {
+        width: 25px;
+        opacity: 0.3;
+        object-fit: contain;
+    }
+}
+
+.ficha-usuario__header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.ficha-usuario__username {
+    display: flex;
+    h2 {
+        font-size: 30px;
+        margin: 0;
+    }
+}
+
+.ficha-usuario__nombre-usuario {
+    color: var(--ion-color-primary);
+}
+
+.ficha-usuario__exit {
+    .btn-text {
+        margin: 0;
+    }
+}
+
+.ficha-usuario__header-bottom {
+    background: #fcede1;
+    text-align: center;
+    h3 {
+        padding: 16px 0;
+        color: var(--ion-color-medium);
+        text-transform: uppercase;
+        font-weight: bold;
+        margin: 0;
+    }
+}
+
+.ficha-usuario__stats {
+    .ficha-usuario__stat {
+        &:nth-child(3) {
+            .ficha-usuario__stat-text {
+                flex-basis: 100%;
+            }
+            .ficha-usuario__stat-numero {
+                width: 40px;
+            }
+        }
+    }
+}
+
+.ficha-usuario__stat {
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 5px solid var(--ion-color-light);
+    padding-bottom: 5px;
+    padding-top: 16px;
+}
+
+.ficha-usuario__stat-text {
+    display: flex;
+    flex-basis: 50%;
+}
+
+.ficha-usuario__stat-numero {
+    color: var(--ion-color-primary);
+    font-weight: bold;
+    font-size: 22px;
+    width: 55px;
+}
+
+.ficha-usuario__stat-text-inner {
+    color: var(--ion-color-medium);
+    font-weight: 800;
+}
+
+.ficha-usuario__stat-button {
+    flex-basis: 50%;
+    ion-button {
+        --padding-start: 0;
+        --padding-end: 0;
+        font-size: 12px;
+    }
+}
+
+.ficha-usuario__btn-segment {
+    ion-segment-button {
+        white-space: normal;
+        height: 80px;
+        --color: #fff;
+        font-weight: bold;
+    }
+}
+
+.cultotipo__imagen {
+    width: 270px;
+    height: auto;
+    opacity: 0.7;
+    display: block;
+    margin: 0 auto;
+}
